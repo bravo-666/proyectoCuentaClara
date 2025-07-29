@@ -1,0 +1,321 @@
+/* Variables CSS para fácil personalización */
+:root {
+    /* Colores */
+    --main-bg: #f5f5f5;
+    --hover-bg: #607B92FF;
+    --text-color: #2c3e50;
+    --content-bg: #f5f5f5;
+    
+    /* Dimensiones */
+    --sidebar-expanded: 200px;
+    --sidebar-collapsed: 70px;
+    --icon-size: 24px;
+    
+    /* Transiciones */
+    --transition-speed: 0.3s;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cabin', sans-serif;
+    background-color: var(--content-bg);
+    transition: margin-left var(--transition-speed);
+    min-height: 100vh;
+    
+}
+
+/* Ocultar checkbox que controla el menú */
+.menu-toggle {
+    display: none;
+}
+
+/* Botón del menú hamburguesa */
+.menu-button {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    font-size: var(--icon-size);
+    cursor: pointer;
+    z-index: 1000;
+    background: var(--main-bg);
+    color: var(--text-color);
+    padding: 10px;
+    border-radius: 10%;
+    transition: var(--transition-speed);
+}
+
+.menu-button:hover {
+    background: var(--hover-bg);
+    color: white;
+    
+}
+
+/* Menú lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--sidebar-expanded);
+    background-color: var(--main-bg);
+    transition: width var(--transition-speed);
+    padding-top: 80px;
+    z-index: 999;
+    overflow: hidden;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Estado contraído del menú */
+.menu-toggle:not(:checked) ~ .sidebar {
+    width: var(--sidebar-collapsed);
+}
+
+/* Lista de items del menú */
+.menu-list {
+    list-style-type: none;
+}
+
+/* Items individuales del menú */
+
+.menu-item {
+    padding: 18px 20px;
+    transition: var(--transition-speed);
+    white-space: nowrap;
+    margin-bottom: 5px;
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Enlaces del menú */
+.menu-link {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Contenedor de iconos */
+.menu-icon, .fallback-icon {
+    width: var(--icon-size);
+    height: var(--icon-size);
+    margin-right: 15px;
+    object-fit: contain;
+}
+
+
+
+/* Texto de los items */
+.menu-label {
+    transition: 
+        opacity var(--transition-speed), 
+        visibility var(--transition-speed);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Ocultar texto cuando el menú está contraído */
+.menu-toggle:not(:checked) ~ .sidebar .menu-label {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Contenido principal */
+.content {
+    margin-left: var(--sidebar-expanded);
+    padding: 20px;
+    transition: margin-left var(--transition-speed);
+}
+
+/* Ajustar contenido cuando el menú está contraído */
+.menu-toggle:not(:checked) ~ .content {
+    margin-left: var(--sidebar-collapsed);
+}
+
+/*--------------------------------------------------------------------------------------------- */
+/* Contenido principal */
+.content {
+    margin-left: var(--sidebar-expanded);
+    margin-right: 260px; /* Añade este margen derecho igual al ancho del panel */
+    padding: 20px;
+    transition: margin-left var(--transition-speed);
+
+}
+
+/* Tarjeta de título */
+.title-card {
+    font-family: 'Cabin', sans-serif;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #043A5B;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 32px;
+    color: white;                   /* Color de texto oscuro */
+    text-align: center;                /* Centrado del texto */
+    
+}
+
+/* Contenedor de mesas */
+.mesas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 30px; 
+    padding: 0;
+    margin: auto;
+}
+
+/* Estilo para cada opción de mesa */
+.mesa-option {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Ocultamos el radio button nativo */
+.mesa-input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+/* Estilo del box de la mesa */
+.mesa-box {
+    font-size: 24px;
+    width: 100%;        /* Ocupa el ancho del contenedor grid */
+    aspect-ratio: 1/0.7; /* Proporción ancho/alto (1:0.7) */
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 7px;
+    padding: 50px 0;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Efecto hover */
+.mesa-option:hover .mesa-box {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Estilo cuando está seleccionado */
+.mesa-input:checked + .mesa-box {
+    background-color: #043A5B;
+    color: white;
+    border-color: #043A5B;
+    box-shadow: 0 0 0 3px rgba(4, 58, 91, 0.3);
+}
+
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mesas-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+    
+    .mesas-actions {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+
+/*--------------------------------------------------------------------------------------------- */
+
+/* Estilos para el panel derecho */
+
+/* Panel derecho */
+.right-panel {
+    width: 260px;
+    background-color: #f5f5f5;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1; /* Puedes reducirlo a 0 si no hay elementos superpuestos */
+    border-left: 1px solid #ddd;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    /* Elimina cualquier propiedad que pueda causar superposición */
+}
+
+/* Contenido del panel derecho */
+.right-panel-content {
+    padding: 20px; /* Espaciado interno */
+    height: 100%; /* Altura completa del panel */
+    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+}
+
+h2 {
+    font-size: 32px;
+    color: white;                   /* Color de texto oscuro */
+    text-align: center;                /* Centrado del texto */
+}
+
+.action-btn {
+    align-items: center;
+    width: 222px;
+    padding: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-btn:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Contenedor de acciones */
+.mesas-actions {
+    position: fixed;
+    bottom: 20px;
+    right: 19px;
+    
+    z-index: 10; 
+}
+
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+
+    
+    /* Oscurecer contenido cuando el menú está abierto */
+    .menu-toggle:checked ~ .content {
+        margin-left: 0;
+        filter: brightness(0.7);
+        pointer-events: none; /* Evitar interacciones con el contenido */
+    }
+    
+    /* Asegurar que el botón esté sobre el menú */
+    .menu-button {
+        z-index: 1001;
+    }
+}
