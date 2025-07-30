@@ -70,6 +70,25 @@
         <div class="title-card">
             <h1>Corte de caja</h1>
         </div>
+
+<input type="date" class="calendario" > <!-- Calendario -->
+        <p class="calendario-p">Elegir otro día de corte: </p>
+
+        <!-- El backend inyecta los valores -->
+        <!-- Sección de información de corte -->
+    <div class="card-info"> 
+        Entradas de efectivo: 
+    </div>
+
+    <div class="card-info">
+        Gastos en materia:  
+    </div>
+
+    <div class="card-info">
+        Dinero en caja: 
+    </div>
+
+
     </main>
 
 <!------------------------------------------------------------------------------------------------------>
@@ -77,12 +96,19 @@
     <div class="right-panel">
         <div class="right-panel-content">
             <div class="title-card">
-                <h2>Información</h2>
+                <h2>Ventas totales</h2>
             </div>
-            <p>En ajustes puedes modificar tres cosas clave:</p>
-            <p>1. El menú (qué platillos aparecen),</p>
-            <p>2. Las mesas (cómo están organizadas),</p>
-            <p>3. El manejo de perfiles (crear o eliminar perfiles).</p>
+
+            <!-- Botones de acción -->
+        <div class="button-container">
+                <button type="submit" name="pagos_extra" class="action-button pagos-button">
+                    Pagos extra
+                </button>
+            
+                <button type="submit" name="calcular_corte" class="action-button corte-button">
+                    Corte
+                </button>
+        </div>
 
         </div>
     </div>

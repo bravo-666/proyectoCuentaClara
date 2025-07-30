@@ -67,8 +67,91 @@
 
     <!-- Contenido principal -->
     <main class="content">
-        <h1>Sistema de Restaurante</h1>
-        <p>Menú lateral contraíble con iconos personalizados.</p>
-    </main>
+            <!-- Tarjeta de título -->
+            <div class="title-card">
+                <h1>Cuentas</h1>
+            </div>
+            
+<!-- No hay botón para agregar. Se eliminó la línea de código -->
+        
+<!-- Filtros de búsqueda -->
+        <form method="GET" class="filtros-container"> <!-- Formulario con método GET que enviará los parámetros de búsqueda por URL -->
+            <div class="filtro-group">
+                <label for="filtro-mesa">Mesa:</label>
+                <input type="number" id="filtro-mesa" name="mesa" min="1" placeholder="No. mesa" class="filtro-input"> <!-- Input para número de mesa (tipo numer con valor mínimo 1) -->
+            </div>
+
+            <div class="filtro-group">
+                <label for="filtro-fecha">Fecha:</label>
+                <input type="date" id="filtro-fecha" name="fecha" class="filtro-input"> <!-- Input para fecha (tipo date nativo del navegador) -->
+            </div>
+
+            <button type="submit" class="filtro-btn">Buscar</button>
+            <a href="cuentas.html" class="filtro-btn reset-btn">Limpiar</a> <!-- Botón de búsqueda (submit) y botón para limpiar filtros (enlace) -->
+        </form>
+
+            <!-- Tabla de cuentas -->
+            <div class="table">
+                <div class="table-container">
+                    <table class="menu-table"> <!-- Algunos de los nombres de las clases no coincidirán con su contenido, no afecta en nada -->
+                        <thead>
+                            <tr>
+                                <th>Mesa</th>
+                                <th>Orden</th>
+                                <th>Pagó/No</th>
+                                <th>Monto</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Espacio reservado para datos dinámicos -->
+                            <!-- Las filas se agregarán aquí automáticamente desde la base de datos ----------------------------------------------->
+                            <!-- Ejemplo de datos -->
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <ul class="ingredients-list"> <!-- Estos no son ingredientes pero por cuestiones de tiempo y practicidad el nombre no fue cambiado -->
+                            <li>Platillo 1</li>
+                            <li>Bedida 2</li>
+                            <li>Platillo 3</li>
+                        </ul>
+                    </td>
+                    <td>Sí</td>
+                    <td>$100.00</td>
+                    <td>28/05/2025</td> <!-- Se eliminaron las líneas de código que eran para los botones de editar y checkbox-->
+                </tr>
+                <tr>
+                    
+                    <td>7</td>
+                    <td>
+                        <ul class="ingredients-list">
+                            <li>Platillo 4</li>
+                            <li>Bedida 2</li>
+                            <li>Platillo 3</li>
+                        </ul>
+                    </td>
+                    <td>No</td>
+                    <td>$145.00</td>
+                    <td>28/05/2025</td>
+                </tr>
+                <tr>
+                    
+                    <td>5</td>
+                    <td>
+                        <ul class="ingredients-list">
+                            <li>Platillo 2</li>
+                            <li>Bedida 2</li>
+                            <li>Platillo 3</li>
+                        </ul>
+                    </td>
+                    <td>Sí</td>
+                    <td>$70.00</td>
+                    <td>28/05/2025</td>
+                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
 </body>
 </html>
