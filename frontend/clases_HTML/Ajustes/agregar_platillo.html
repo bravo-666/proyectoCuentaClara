@@ -74,6 +74,19 @@
             <div class="form-group">
                 <input type="text" class="form-input" placeholder="Ingrediente 9">
             </div>
+
+            <!-- Sección para seleccionar la foto -->
+        <div class="foto-section">
+        <p>Edita la foto del platillo:</p>
+            <div class="file-input-container">
+                <label for="platillo-foto" class="file-input-label">
+                    <span class="file-input-text">Seleccionar archivo</span>
+                    <input type="file" id="platillo-foto" class="file-input" accept="image/*" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'No se ha seleccionado ningún archivo'"> <!-- Esta línea es la que nos permite mostrar el nombre del archivo cuando se selecciona -->
+                    <input type="file" id="platillo-foto" class="file-input" accept="image/*">
+                </label>
+                <span class="file-name" id="file-name">No se ha seleccionado ningún archivo</span>
+            </div>
+        </div>
             
             <!-- Botón de envío del formulario -->
             

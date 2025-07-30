@@ -119,6 +119,52 @@ h2 {
     
 }
 
+/* Estilos para la sección de foto */
+.foto-section {
+    margin: 20px 0;
+}
+
+.file-input-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-input-label {
+    display: inline-block;
+    padding: 0.8rem;
+    background-color: #607B92;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.file-input-label:hover {
+    background-color: #043A5B;
+}
+
+.file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-input-text {
+    font-size: 1rem;
+}
+
+.file-name {
+    font-size: 0.9rem;
+    color: #666;
+    padding-left: 5px;
+}
+
 /* 
  * BOTÓN DE ENVÍO 
  * Estilos para el botón de submit
