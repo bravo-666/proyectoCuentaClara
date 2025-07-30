@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../clases_CSS/styleMesas.css">
+    
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesas - Cuenta Clara</title>
+    <!-- Fuente de iconos de respaldo (se usará si no cargan tus imágenes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Checkbox invisible para controlar el menú -->
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    
+    <!-- Botón hamburguesa - siempre visible -->
+    <label for="menu-toggle" class="menu-button">
+        <i class="fas fa-bars"></i>
+    </label>
+
+    <!-- Menú lateral -->
+    <nav class="sidebar">
+        <ul class="menu-list">
+            <!-- Cada item tiene su propia clase y estructura accesible -->
+            <li class="menu-item">
+                <a href="..\../clases HTML/menu.html" class="menu-link">
+                    <i class="fas fa-utensils fallback-icon"></i>
+                    <span class="menu-label">Menú</span>
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="..\../clases HTML/mesas.html" class="menu-link">
+                    <i class="fas fa-chair fallback-icon"></i>
+                    <span class="menu-label">Mesas</span>
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="..\../clases HTML/cuentas.html" class="menu-link">
+                    <i class="fas fa-receipt fallback-icon"></i>
+                    <span class="menu-label">Cuentas</span>
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="..\../clases HTML/corte.html" class="menu-link">
+                    <i class="fas fa-cut fallback-icon"></i>
+                    <span class="menu-label">Corte</span>
+                </a>
+            </li>
+            
+            <li class="menu-item">
+                <a href="..\../clases HTML/ajustes.html" class="menu-link">
+                    <i class="fas fa-cog fallback-icon"></i>
+                    <span class="menu-label">Ajustes</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- -------------------------------------------------------------------------------------------- -->
+    <!-- Contenido principal -->
+    <main class="content">
+        <div class="title-card">
+            <h1>Mesas</h1>
+        </div>
+
+<form action="procesar_mesa.php" method="post" class="mesas-form">
+        <div class="mesas-container">
+            <!-- Grupo de radio buttons para selección única -->
+            <label class="mesa-option">
+                <input type="radio" name="mesa-seleccionada" value="1" class="mesa-input">
+                <div class="mesa-box">Mesa 1</div>
+            </label>
+            
+            <label class="mesa-option">
+                <input type="radio" name="mesa-seleccionada" value="2" class="mesa-input">
+                <div class="mesa-box">Mesa 2</div>
+            </label>
+            
+            <!-- Repite para las mesas que necesites -->
+            <label class="mesa-option">
+                <input type="radio" name="mesa-seleccionada" value="3" class="mesa-input">
+                <div class="mesa-box">Mesa 3</div>
+            </label>
+            
+            <label class="mesa-option">
+                <input type="radio" name="mesa-seleccionada" value="4" class="mesa-input">
+                <div class="mesa-box">Mesa 4</div>
+            </label>
+            
+            <label class="mesa-option">
+                <input type="radio" name="mesa-seleccionada" value="5" class="mesa-input">
+                <div class="mesa-box">Mesa 5</div>
+            </label>
+            
+            <label class="mesa-option">
+                <input type="radio" name="mesa-seleccionada" value="6" class="mesa-input">
+                <div class="mesa-box">Mesa 6</div>
+            </label>
+            
+            <label class="mesa-option">
+                <input type="radio" name="mesa-seleccionada" value="7" class="mesa-input">
+                <div class="mesa-box">Mesa 7</div>
+            </label>
+            
+            <label class="mesa-option">
+                <input type="radio" name="mesa-seleccionada" value="8" class="mesa-input">
+                <div class="mesa-box">Mesa 8</div>
+            </label>
+            
+            <label class="mesa-option">
+                <input type="radio" name="mesa-seleccionada" value="9" class="mesa-input">
+                <div class="mesa-box">Mesa 9</div>
+            </label>
+        </div>
+</form>
+
+    </main>
+
+<!------------------------------------------------------------------------------------------------------>
+    <!-- Panel derecho -->
+    <div class="right-panel">
+        <div class="right-panel-content">
+            <div class="title-card">
+                <h2>Información</h2>
+            </div>
+            
+
+            <div class="mesas-actions">
+                <button type="submit" class="action-btn">
+                    <i class="fas fa-utensils"></i> Asignar mesa
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<!-- 
+<label class="mesa-option">
+    <input type="radio" name="mesa-seleccionada" value="10" class="mesa-input">
+    <div class="mesa-box">Mesa 10</div>
+</label> 
+-->

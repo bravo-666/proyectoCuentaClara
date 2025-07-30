@@ -6,16 +6,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../clases CSS/styleMesas.css">
+    <link rel="stylesheet" href="../clases_CSS/styleAjustes.css">
     
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesas - Cuenta Clara</title>
+    <title>Ajustes - Cuenta Clara</title>
     <!-- Fuente de iconos de respaldo (se usará si no cargan tus imágenes) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!------------------------------------------------------------------------------------------------------>
     <!-- Checkbox invisible para controlar el menú -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
     
@@ -65,89 +66,39 @@
         </ul>
     </nav>
 
-    <!-- -------------------------------------------------------------------------------------------- -->
+    <!------------------------------------------------------------------------------------------------------>
     <!-- Contenido principal -->
     <main class="content">
         <div class="title-card">
-            <h1>Mesas</h1>
+            <h1>Ajustes</h1>
         </div>
 
-<form action="procesar_mesa.php" method="post" class="mesas-form">
-        <div class="mesas-container">
-            <!-- Grupo de radio buttons para selección única -->
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="1" class="mesa-input">
-                <div class="mesa-box">Mesa 1</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="2" class="mesa-input">
-                <div class="mesa-box">Mesa 2</div>
-            </label>
-            
-            <!-- Repite para las mesas que necesites -->
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="3" class="mesa-input">
-                <div class="mesa-box">Mesa 3</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="4" class="mesa-input">
-                <div class="mesa-box">Mesa 4</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="5" class="mesa-input">
-                <div class="mesa-box">Mesa 5</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="6" class="mesa-input">
-                <div class="mesa-box">Mesa 6</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="7" class="mesa-input">
-                <div class="mesa-box">Mesa 7</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="8" class="mesa-input">
-                <div class="mesa-box">Mesa 8</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="9" class="mesa-input">
-                <div class="mesa-box">Mesa 9</div>
-            </label>
+        <div>
+            <img src="" alt="Perfil de usuario" class="profile-image">
         </div>
-</form>
 
+        <div class="settings-links">
+            <a href="Ajustes/editar_menu.html" class="settings-btm">Editar menú</a>
+            <a href="#" class="settings-btm">Editar mesas</a>
+            <a href="centro_de_cuentas.html" class="settings-btm">Centro de cuentas</a>
+        </div>
+        
+        <p></p>
     </main>
 
-<!------------------------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------------------------>
     <!-- Panel derecho -->
     <div class="right-panel">
         <div class="right-panel-content">
             <div class="title-card">
                 <h2>Información</h2>
             </div>
-            
+            <p>En ajustes puedes modificar tres cosas clave:</p>
+            <p>1. El menú (qué platillos aparecen),</p>
+            <p>2. Las mesas (cómo están organizadas),</p>
+            <p>3. El manejo de perfiles (crear o eliminar perfiles).</p>
 
-            <div class="mesas-actions">
-                <button type="submit" class="action-btn">
-                    <i class="fas fa-utensils"></i> Asignar mesa
-                </button>
-            </div>
         </div>
     </div>
-
 </body>
 </html>
-
-<!-- 
-<label class="mesa-option">
-    <input type="radio" name="mesa-seleccionada" value="10" class="mesa-input">
-    <div class="mesa-box">Mesa 10</div>
-</label> 
--->
