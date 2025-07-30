@@ -64,6 +64,18 @@ body {
 
 .menu-list { list-style-type: none; }
 
+.menu-item-first {
+    padding: 18px 20px;
+    transition: var(--transition-speed);
+    white-space: nowrap;
+    margin-bottom: 5px;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1),  0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-first:hover {
+    background-color: var(--hover-bg);
+}
+
 .menu-item {
     padding: 18px 20px;
     transition: var(--transition-speed);
