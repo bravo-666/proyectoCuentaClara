@@ -282,20 +282,26 @@ h1 {
 }
 
 /* Botón para editar -------------------------------- */
+/* Estilo base (similar al botón original) */
 .edit-btn {
-    background-color: #607B92FF;
+    display: inline-block;
+    padding: 8px 10px;
+    background-color: #607B92;
     color: white;
     border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
 }
 
-/* Efecto hover para el botón editar */
+/* Efecto hover */
 .edit-btn:hover {
-    background-color: #043A5BFF;
-
+    background-color: #043A5B;
+    color: white;
+    text-decoration: none;
 }
 
 /* Estilo para la lista de ingredientes ---------------------------------------------- */

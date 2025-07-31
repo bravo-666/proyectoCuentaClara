@@ -49,9 +49,21 @@
                 <label for="password">Contraseña</label>
                 <input type="password" id="password" required>
             </div>
+
+            <!-- Botón para seleccionar archivo de imagen -->
+                    <label for="platillo-foto" class="file-input-label">
+                        <span class="file-input-text">Seleccionar archivo</span>
+                        <input type="file" id="platillo-foto" class="file-input" accept="image/*" 
+                            onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'No se ha seleccionado ningún archivo'">
+                    </label>
             
+                    <!-- Nombre del archivo seleccionado -->
+                    <span class="file-name" id="file-name">No se ha seleccionado ningún archivo</span>
+                
+                <!-- Sugerencia sobre el formato de la imagen -->
+                <div class="file-hint">Formatos aceptados: JPG, PNG (Máx. 2MB)</div>
             
-            
+
             <button type="submit" class="btn">Crear cuenta</button>
             
             <div class="login-link">

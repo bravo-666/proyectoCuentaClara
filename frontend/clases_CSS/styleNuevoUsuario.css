@@ -1,7 +1,8 @@
-/* ========== ESTILOS GENERALES ========== */
+/* ========== VARIABLES CSS ========== */
 :root {
     --primary-color: #607B92FF;
     --primary-hover: #043A5BFF;
+    --secondary-color: #4285f4;
     --text-color: #333;
     --light-text: #565D6D;
     --border-color: #e0e3e7;
@@ -14,12 +15,18 @@
     --transition: all 0.3s ease;
 }
 
+/* ========== ESTILOS GENERALES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Cabin', sans-serif;
     background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
     color: var(--text-color);
+    line-height: 1.6;
     min-height: 100vh;
 }
 
@@ -27,6 +34,8 @@ body {
 header {
     position: relative;
     padding: 20px 0;
+    background-color: #f5f5f5;
+    
 }
 
 .logo {
@@ -35,20 +44,25 @@ header {
     left: 60px;
     width: 150px;
     height: auto;
+    transition: var(--transition);
 }
 
 .migas {
     position: fixed;
     top: 20px;
     right: 60px;
-    font-family: 'Cabin', sans-serif;
     font-size: 16px;
     color: #2A2F8C;
-    background: white;
+    background: var(--white);
     padding: 8px 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    transition: var(--transition);
 }
+
+
+
 
 /* ========== MAIN LAYOUT ========== */
 main {
@@ -65,30 +79,50 @@ main {
     flex: 1;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: var(--shadow-sm);
-    background:linear-gradient(180deg, #FAFAFBFF 0%, #DEE1E6FF 100%);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(180deg, #FAFAFBFF 0%, #DEE1E6FF 100%);
+    box-shadow: var(--shadow-md);
     border: 1px solid #dbdee5;
+    transition: var(--transition);
+    margin-top: -35px;
 }
 
+
+
 .card {
-    background:linear-gradient(180deg, #FAFAFBFF 0%, #DEE1E6FF 100%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+}
+
+.card h2 {
+    color: var(--primary-hover);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.card p {
+    color: var(--light-text);
+    line-height: 1.5;
 }
 
 /* ========== FORMULARIO ========== */
 .signup-form {
-    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .form-title {
-    
+    color: var(--primary-hover);
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 28px;
+    font-weight: 600;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .form-group label {
@@ -113,9 +147,10 @@ main {
 .form-group select:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(42, 47, 140, 0.1);
+    box-shadow: 0 0 0 3px rgba(96, 123, 146, 0.2);
 }
 
+/* ========== BOTÓN PRINCIPAL ========== */
 .btn {
     width: 100%;
     padding: 15px;
@@ -128,13 +163,81 @@ main {
     cursor: pointer;
     transition: var(--transition);
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .btn:hover {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
+/* ========== SUBIDA DE ARCHIVOS ========== */
+.file-input-container {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 25px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    box-shadow: var(--shadow-sm);
+}
+
+.file-input-label:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.file-input-text {
+    font-size: 1rem;
+}
+
+.file-name {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--light-text);
+    padding: 8px 12px;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+    margin-top: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.file-hint {
+    font-size: 0.75rem;
+    color: var(--light-text);
+    margin-top: 5px;
+    padding-left: 5px;
+    font-style: italic;
+}
+
+/* ========== ENLACE DE LOGIN ========== */
 .login-link {
     text-align: center;
     margin-top: 20px;
@@ -142,52 +245,57 @@ main {
 }
 
 .login-link a {
-    color: #4285f4;
+    color: var(--secondary-color);
     text-decoration: none;
     font-weight: 500;
+    transition: var(--transition);
 }
 
 .login-link a:hover {
     text-decoration: underline;
+    color: var(--primary-hover);
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== RESPONSIVE DESIGN ========== */
 @media (max-width: 900px) {
     main {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 120px;
-}
+        flex-direction: column;
+        align-items: center;
+        margin-top: 120px;
+    }
 
-.card, .signup-container {
-    width: 100%;
-}
+    .card, .signup-container {
+        width: 100%;
+    }
 
-.logo {
-    top: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-}
+    .logo {
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+    }
 
-.migas {
-    top: 70px;
-    right: 50%;
-    transform: translateX(50%);
-}
+    .migas {
+        top: 70px;
+        right: 50%;
+        transform: translateX(50%);
+    }
 }
 
 @media (max-width: 480px) {
-main {
-    padding: 1rem;
-}
+    main {
+        padding: 1rem;
+    }
 
-.signup-form, .card {
-    padding: 1.5rem;
-}
+    .signup-form, .card {
+        padding: 1.5rem;
+    }
 
-.form-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+    .form-title {
+        font-size: 24px;
+    }
+
+    .file-input-label {
+        padding: 12px 20px;
+    }
 }
