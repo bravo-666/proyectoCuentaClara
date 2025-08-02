@@ -86,40 +86,7 @@
             </label>
             
             <!-- Repite para las mesas que necesites -->
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="3" class="mesa-input">
-                <div class="mesa-box">Mesa 3</div>
-            </label>
             
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="4" class="mesa-input">
-                <div class="mesa-box">Mesa 4</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="5" class="mesa-input">
-                <div class="mesa-box">Mesa 5</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="6" class="mesa-input">
-                <div class="mesa-box">Mesa 6</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="7" class="mesa-input">
-                <div class="mesa-box">Mesa 7</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="8" class="mesa-input">
-                <div class="mesa-box">Mesa 8</div>
-            </label>
-            
-            <label class="mesa-option">
-                <input type="radio" name="mesa-seleccionada" value="9" class="mesa-input">
-                <div class="mesa-box">Mesa 9</div>
-            </label>
         </div>
 </form>
 
@@ -127,27 +94,54 @@
 
 <!------------------------------------------------------------------------------------------------------>
     <!-- Panel derecho -->
-    <div class="right-panel">
-        <div class="right-panel-content">
-            <div class="title-card">
-                <h2>Información</h2>
+<div class="right-panel">
+    <div class="right-panel-content">
+        <div class="title-card">
+            <h2>Órdenes activas</h2>
+        </div>
+
+        <div class="orden-container">
+            <!-- Orden de mesa (ejemplo) -->
+            <div class="orden-card">
+                <h3 id="mesa-orden">Mesa 3</h3>
+                <p>2x Hamburguesa Clásica</p>
+                <p>1x Refresco Grande</p>
+                <p>1x Ensalada César</p>
+                <button class="eliminar-btn" data-orden-id="1">✓ </button>
             </div>
             
-
-            <div class="mesas-actions">
-                <button type="submit" class="action-btn">
-                    <i class="fas fa-utensils"></i> Asignar mesa
-            </button>
+            <!-- Orden "para llevar" (ejemplo) -->
+            <div class="orden-card para-llevar">
+                <h3>Para Llevar</h3>
+                <p>3x Tacos al Pastor</p>
+                <p>2x Agua Mineral</p>
+                <p>1x Flan Napolitano</p>
+                <button class="eliminar-btn" data-orden-id="2">✓ </button>
             </div>
+            
+            <!-- Más órdenes se agregarán dinámicamente aquí -->
+
+            <!-- Plantilla vacía para rellenar con datos traídos de la base de datos -->
+            <!--
+            <div class="orden-card">
+                <h3 id="mesa-orden">{nombre_mesa}</h3>
+                <p>{platillos_y_cantidades}</p>
+                <button class="eliminar-btn" data-orden-id="{id_orden}">✓ </button>
+            </div>
+            -->
         </div>
+        
+        <div class="panel-footer">
+            <div class="mesas-actions">
+            <button type="button" class="action-btn" id="asignar-mesa-btn">
+                <i class="fas fa-utensils"></i> Asignar Mesa
+            </button>
+        </div>
+        </div>
+        
     </div>
+</div>
 
 </body>
 </html>
 
-<!-- 
-<label class="mesa-option">
-    <input type="radio" name="mesa-seleccionada" value="10" class="mesa-input">
-    <div class="mesa-box">Mesa 10</div>
-</label> 
--->

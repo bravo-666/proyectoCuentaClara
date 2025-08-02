@@ -65,29 +65,32 @@
         </ul>
     </nav>
 
+<!-------------------------------------------------------------------->    
     <!-- Contenido principal -->
     <main class="content">
         <div class="title-card">
             <h1>Corte de caja</h1>
         </div>
-
-<input type="date" class="calendario" > <!-- Calendario -->
+        
+        <input type="date" class="calendario" > <!-- Calendario -->
         <p class="calendario-p">Elegir otro día de corte: </p>
 
         <!-- El backend inyecta los valores -->
         <!-- Sección de información de corte -->
     <div class="card-info"> 
+        <!-- [BACKEND] Inyectar aquí el valor de entradas de efectivo -->
         Entradas de efectivo: 
     </div>
 
     <div class="card-info">
+        <!-- [BACKEND] Inyectar aquí el valor de gastos en materia -->
         Gastos en materia:  
     </div>
 
     <div class="card-info">
+        <!-- [BACKEND] Inyectar aquí el valor de dinero en caja -->
         Dinero en caja: 
     </div>
-
 
     </main>
 
@@ -99,20 +102,30 @@
                 <h2>Ventas totales</h2>
             </div>
 
-            <!-- Botones de acción -->
-        <div class="button-container">
+            <!-- Formulario para pagos extra - Backend procesa POST -->
+            <form method="POST" class="pagos-form">
+                <div class="form-group">
+                    <label for="monto-extra">Monto extra:</label>
+                    <input type="number" id="monto-extra" name="monto_extra" class="form-input" required>
+                </div>
                 <button type="submit" name="pagos_extra" class="action-button pagos-button">
-                    Pagos extra
+                    Agregar pago extra
                 </button>
-            
+            </form>
+
+            <!-- Formulario para calcular corte - Backend procesa POST -->
+            <form method="POST" class="corte-form">
+                <div class="form-group">
+                    <label for="efectivo-inicial">Efectivo inicial:</label>
+                    <input type="number" id="efectivo-inicial" name="efectivo_inicial" class="form-input" required>
+                </div>
                 <button type="submit" name="calcular_corte" class="action-button corte-button">
-                    Corte
+                    Calcular corte
                 </button>
-        </div>
+            </form>
 
         </div>
     </div>
-
 
 </body>
 </html>

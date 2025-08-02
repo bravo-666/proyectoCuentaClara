@@ -59,6 +59,17 @@
 
         <form action="procesar_pedido.php" method="post" class="menu-form">
             <div class="menu-container">
+                <!-- Plantilla vacía para rellenar con datos traídos de la base de datos -->
+                <!--
+                <label class="platillo-option">
+                    <input type="checkbox" name="platillos[]" value="{id_platillo}" class="platillo-input">
+                    <div class="platillo-card">
+                        <div class="platillo-imagen" style="background-image: url('{url_imagen_platillo}');"></div>
+                        <div class="platillo-nombre">{nombre_platillo}</div>
+                    </div>
+                </label>
+                -->
+                <!-- ...platillos estáticos o generados dinámicamente... -->
                 <label class="platillo-option">
                     <input type="checkbox" name="platillos[]" value="1" class="platillo-input">
                     <div class="platillo-card">
@@ -91,37 +102,7 @@
                     </div>
                 </label>
 
-                <label class="platillo-option">
-                    <input type="checkbox" name="platillos[]" value="1" class="platillo-input">
-                    <div class="platillo-card">
-                        <div class="platillo-imagen" style="background-image: url('../imagenes_platillos/platillo1.jpg');"></div>
-                        <div class="platillo-nombre">Platillo 1</div>
-                    </div>
-                </label>
-
-                <label class="platillo-option">
-                    <input type="checkbox" name="platillos[]" value="1" class="platillo-input">
-                    <div class="platillo-card">
-                        <div class="platillo-imagen" style="background-image: url('../imagenes_platillos/platillo1.jpg');"></div>
-                        <div class="platillo-nombre">Platillo 1</div>
-                    </div>
-                </label>
-
-                <label class="platillo-option">
-                    <input type="checkbox" name="platillos[]" value="1" class="platillo-input">
-                    <div class="platillo-card">
-                        <div class="platillo-imagen" style="background-image: url('../imagenes_platillos/platillo1.jpg');"></div>
-                        <div class="platillo-nombre">Platillo 1</div>
-                    </div>
-                </label>
-
-                <label class="platillo-option">
-                    <input type="checkbox" name="platillos[]" value="1" class="platillo-input">
-                    <div class="platillo-card">
-                        <div class="platillo-imagen" style="background-image: url('../imagenes_platillos/platillo1.jpg');"></div>
-                        <div class="platillo-nombre">Platillo 1</div>
-                    </div>
-                </label>
+                
             </div>
         </form>
 
@@ -135,7 +116,7 @@
                     <div class="platillo-pedido">
                         <div class="platillo-nombre">Plato 1ffffffffffffff</div>
                         <div class="platillo-acciones">
-                            <a href="#" class="opciones-link">⋮</a>
+                            <a href="Ingredientes_opcionales/editar_ingre.html" class="opciones-link">⋮</a>
                             <button class="eliminar-btn">×</button>
                         </div>
                     </div>
@@ -143,43 +124,10 @@
                     <div class="platillo-pedido">
                         <div class="platillo-nombre">Plato 4</div>
                         <div class="platillo-acciones">
-                            <a href="#" class="opciones-link">⋮</a>
+                            <a href="Ingredientes_opcionales/editar_ingre.html" class="opciones-link">⋮</a>
                             <button class="eliminar-btn">×</button>
                         </div>
                     </div>
-                    
-                    <div class="platillo-pedido">
-                        <div class="platillo-nombre">Plato 3</div>
-                        <div class="platillo-acciones">
-                            <a href="#" class="opciones-link">⋮</a>
-                            <button class="eliminar-btn">×</button>
-                        </div>
-                    </div>
-
-                    <div class="platillo-pedido">
-                        <div class="platillo-nombre">Plato 3</div>
-                        <div class="platillo-acciones">
-                            <a href="#" class="opciones-link">⋮</a>
-                            <button class="eliminar-btn">×</button>
-                        </div>
-                    </div>
-
-                    <div class="platillo-pedido">
-                        <div class="platillo-nombre">Plato 3</div>
-                        <div class="platillo-acciones">
-                            <a href="#" class="opciones-link">⋮</a>
-                            <button class="eliminar-btn">×</button>
-                        </div>
-                    </div>
-
-                    <div class="platillo-pedido">
-                        <div class="platillo-nombre">Plato 3</div>
-                        <div class="platillo-acciones">
-                            <a href="#" class="opciones-link">⋮</a>
-                            <button class="eliminar-btn">×</button>
-                        </div>
-                    </div>
-
                 </div>
                 
                 <div class="panel-footer">
@@ -189,12 +137,22 @@
                     </div>
                     
                     <div class="botones-container">
-                        <a href="#" class="boton-mesa">Asignar mesa</a>
+                        <a href="mesas.html" class="boton-mesa">Asignar mesa</a>
                         <a href="#" class="boton-ordenar">Ordenar</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <!-- Plantilla vacía para rellenar con datos traídos de la base de datos -->
+    <!--
+    <div class="platillo-pedido">
+        <div class="platillo-nombre">{nombre_platillo}</div>
+        <div class="platillo-acciones">
+            <a href="#" class="opciones-link">⋮</a>
+            <button class="eliminar-btn">×</button>
+        </div>
+    </div>
+    -->
 </body>
 </html>
