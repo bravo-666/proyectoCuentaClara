@@ -272,6 +272,13 @@ h1, h2 {
     color: white; /* Color blanco para las tarjetas del panel derecho */
 }
 
+.platillo-precio {
+    font-size: 1rem;
+    color: white; /* Color blanco para el precio */
+    padding-top: 10px;
+    text-align: left;
+}
+
 .platillo-acciones {
     display: flex;
     align-items: center;
