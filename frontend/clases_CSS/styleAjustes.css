@@ -5,11 +5,21 @@
     --hover-bg: #607B92FF;
     --text-color: #2c3e50;
     --content-bg: #f5f5f5;
+    --azul-oscuro: #043A5B;
+    --azul-claro: #3498db;
+    --verde: #28a745;
+    --rojo: #ff6b6b;
     
     /* Dimensiones */
-    --sidebar-expanded: 200px;
-    --sidebar-collapsed: 70px;
-    --icon-size: 24px;
+    --sidebar-expanded: 250px;
+    --sidebar-collapsed: 80px;
+    --right-panel-width: 260px;
+    --icon-size: 28px;
+    
+    /* Espaciados */
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
     
     /* Transiciones */
     --transition-speed: 0.3s;
@@ -25,37 +35,38 @@
 body {
     font-family: 'Cabin', sans-serif;
     background-color: var(--content-bg);
-    transition: margin-left var(--transition-speed);
     min-height: 100vh;
-    
+    color: var(--text-color);
+    transition: margin-left var(--transition-speed);
 }
 
-/* Ocultar checkbox que controla el menú */
-.menu-toggle {
-    display: none;
+/* ------------------------- */
+/* ESTILOS DEL MENÚ LATERAL */
+/* ------------------------- */
+
+.menu-toggle { 
+    display: none; 
 }
 
-/* Botón del menú hamburguesa */
 .menu-button {
     position: fixed;
-    top: 20px;
-    left: 10px;
+    top: var(--spacing-lg);
+    left: var(--spacing-sm);
     font-size: var(--icon-size);
     cursor: pointer;
     z-index: 1000;
     background: var(--main-bg);
     color: var(--text-color);
-    padding: 10px;
+    padding: var(--spacing-sm);
     border-radius: 10%;
     transition: var(--transition-speed);
 }
 
 .menu-button:hover {
     background: var(--hover-bg);
-    
+    color: white;
 }
 
-/* Menú lateral */
 .sidebar {
     position: fixed;
     top: 0;
@@ -70,197 +81,271 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estado contraído del menú */
 .menu-toggle:not(:checked) ~ .sidebar {
     width: var(--sidebar-collapsed);
 }
 
-/* Lista de items del menú */
 .menu-list {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Items individuales del menú */
-
-.menu-item-first {
-    padding: 18px 20px;
-    transition: var(--transition-speed);
-    white-space: nowrap;
-    margin-bottom: 5px;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1),  0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.menu-item-first:hover {
-    background-color: var(--hover-bg);
-}
-
+.menu-item-first, 
 .menu-item {
-    padding: 18px 20px;
-    transition: var(--transition-speed);
-    white-space: nowrap;
-    margin-bottom: 5px;
-    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-.menu-item:hover {
-    background-color: var(--hover-bg);
-}
-
-/* Enlaces del menú */
 .menu-link {
-    display: flex;
+    display: flex !important;
     align-items: center;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 16px;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 18px 25px !important;
+    background: none !important;
+    border: none !important;
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    transition: var(--transition-speed) !important;
+    font-family: inherit !important;
 }
 
-/* Contenedor de iconos */
+.menu-item-first .menu-link {
+    box-shadow: 0px -2px 5px rgba(0,0,0,0.1), 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-item .menu-link {
+    box-shadow: 0px 5px 4px rgba(0,0,0,0.1);
+}
+
+.menu-link:hover {
+    background-color: var(--hover-bg) !important;
+    color: white !important;
+}
+
 .menu-icon, .fallback-icon {
     width: var(--icon-size);
     height: var(--icon-size);
-    margin-right: 15px;
+    margin-right: 18px;
     object-fit: contain;
 }
 
-
-
-/* Texto de los items */
 .menu-label {
-    transition: 
-        opacity var(--transition-speed), 
-        visibility var(--transition-speed);
+    transition: opacity var(--transition-speed), visibility var(--transition-speed);
     opacity: 1;
     visibility: visible;
+    white-space: nowrap;
 }
 
-/* Ocultar texto cuando el menú está contraído */
 .menu-toggle:not(:checked) ~ .sidebar .menu-label {
     opacity: 0;
     visibility: hidden;
 }
 
-/* Contenido principal */
+/* ------------------------- */
+/* CONTENIDO PRINCIPAL */
+/* ------------------------- */
+
 .content {
     margin-left: var(--sidebar-expanded);
-    padding: 20px;
+    margin-right: var(--right-panel-width);
+    padding: var(--spacing-lg);
     transition: margin-left var(--transition-speed);
 }
 
-/* Ajustar contenido cuando el menú está contraído */
 .menu-toggle:not(:checked) ~ .content {
     margin-left: var(--sidebar-collapsed);
 }
 
-/* Estilos responsivos */
-@media (max-width: 768px) {
-
-    
-    /* Oscurecer contenido cuando el menú está abierto */
-    .menu-toggle:checked ~ .content {
-        margin-left: var(--sidebar-collapsed);
-        margin-right: 250px; /* Mantén el mismo margen derecho */
-    }
-    
-    /* Asegurar que el botón esté sobre el menú */
-    .menu-button {
-        z-index: 1001;
-    }
-}
-/*--------------------------------------------------------------------------------------------- */
-
-.content {
-    margin-left: var(--sidebar-expanded);
-    margin-right: 260px; /* Añade este margen derecho igual al ancho del panel */
-    padding: 20px;
-    transition: margin-left var(--transition-speed);
-
-}
-
-/* Tarjeta de título */
 .title-card {
-    font-family: 'Cabin', sans-serif;
     width: 100%;
-    padding: 10px;
+    padding: var(--spacing-md);
+    background-color: var(--azul-oscuro);
     border-radius: 5px;
-    background-color: #043A5B;
-    align-items: center;
-    margin: auto;
     margin-bottom: 30px;
+    text-align: center;
 }
 
-h1 {
-    font-size: 32px;
-    color: white;                   /* Color de texto oscuro */
-    text-align: center;                /* Centrado del texto */
-    
+h1, h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
 }
 
-/*estilos de la tarjeta de perfil */
+/* ------------------------- */
+/* PERFIL DE USUARIO */
+/* ------------------------- */
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: 30px;
+    padding: var(--spacing-md);
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
 .profile-image {
-    width: 100px;                     /* Ancho de la imagen */
-    height: 100px;                    /* Alto de la imagen */
-    padding: 10%;
-    object-fit: cover;                /* Ajusta la imagen para cubrir el área */
-    border: 2px solid #043A5B; /* Borde azul */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid var(--azul-oscuro);
+    border-radius: 50%;
 }
 
-/* Enlaces de configuración */
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0 0 var(--spacing-sm) 0;
+    font-weight: 600;
+}
+
+.user-email, .user-role {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 3px 0;
+}
+
+.user-role {
+    font-style: italic;
+    color: var(--hover-bg);
+}
+
+/* ------------------------- */
+/* BOTONES DE AJUSTES */
+/* ------------------------- */
+
 .settings-links {
     display: flex;
-    flex-direction: column;           /* Coloca los enlaces en una columna */
-    align-items: left;              /* Centra los enlaces horizontalmente */
-    margin-top: 20px;                 /* Espacio superior */
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: 400px;
 }
 
-/* Estilos de los botones de los enlaces */
-.settings-btm {
-    font-style: bold;
-    width: 30%;                       /* Ancho completo */
-    background-color: #607B92FF;               /* Color azul */
-    color: white;                      /* Texto blanco */
-    border: none;                      /* Sin borde */
-    padding: 0.8rem;                   /* Espaciado interno */
-    border-radius: 5px;                /* Bordes redondeados */
-    font-size: 1rem;                   /* Tamaño de fuente */
-    margin-top: 1rem;                  /* Espaciado superior */
-    cursor: pointer;                   /* Cursor tipo pointer */
-    transition: background 0.2s;       /* Transición de color */
-    text-decoration: none;
+.settings-btn {
+    font-weight: bold;
+    width: 100%;
+    background-color: var(--hover-bg);
+    color: white;
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-family: 'Cabin', sans-serif;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
 }
 
-/* Efecto hover del botón */
-.settings-btm:hover {
-    background-color: #043A5BFF;              /* Color azul más oscuro */
+.settings-btn:hover {
+    background-color: var(--azul-oscuro);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
-/*--------------------------------------------------------------------------------------------- */
+/* ------------------------- */
+/* PANEL DERECHO */
+/* ------------------------- */
 
-/* Estilos para el panel derecho */
-
-/* Panel derecho */
 .right-panel {
-    width: 260px;
-    background-color: #f5f5f5;
+    width: var(--right-panel-width);
+    background-color: var(--main-bg);
     position: fixed;
     right: 0;
     top: 0;
     bottom: 0;
-    z-index: 1; /* Puedes reducirlo a 0 si no hay elementos superpuestos */
+    z-index: 1;
     border-left: 1px solid #ddd;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    /* Elimina cualquier propiedad que pueda causar superposición */
 }
 
-/* Contenido del panel derecho */
 .right-panel-content {
-    padding: 20px; /* Espaciado interno */
-    height: 100%; /* Altura completa del panel */
-    overflow-y: auto; /* Desplazamiento vertical si es necesario */
+    padding: var(--spacing-lg);
+    height: 100%;
+    overflow-y: auto;
 }
 
-h2 {
-    font-size: 32px;
-    color: white;                   /* Color de texto oscuro */
-    text-align: center;                /* Centrado del texto */
+.right-panel-content p {
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* ------------------------- */
+/* RESPONSIVE DESIGN */
+/* ------------------------- */
+
+@media (max-width: 1024px) {
+    .right-panel {
+        width: 240px;
+    }
+    
+    .content {
+        margin-right: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin-right: 0;
+    }
+
+    .right-panel {
+        width: 100%;
+        position: relative;
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        height: auto;
+    }
+
+    .user-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .settings-links {
+        max-width: 100%;
+    }
+
+    .menu-toggle:checked ~ .content {
+        margin-left: 0;
+        filter: brightness(0.7);
+        pointer-events: none;
+    }
+    
+    .menu-button {
+        z-index: 1001;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --sidebar-expanded: 220px;
+        --sidebar-collapsed: 70px;
+    }
+    
+    .user-name {
+        font-size: 1.3rem;
+    }
+    
+    .user-email, .user-role {
+        font-size: 0.9rem;
+    }
+    
+    .settings-btn {
+        padding: var(--spacing-sm);
+    }
 }

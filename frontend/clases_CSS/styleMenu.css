@@ -3,9 +3,9 @@
     --hover-bg: #607B92FF;
     --text-color: #2c3e50;
     --content-bg: #f5f5f5;
-    --sidebar-expanded: 200px;
-    --sidebar-collapsed: 70px;
-    --icon-size: 24px;
+    --sidebar-expanded: 250px; /* Aumentado de 200px a 250px */
+    --sidebar-collapsed: 80px;  /* Aumentado de 70px a 80px */
+    --icon-size: 28px;          /* Aumentado de 24px a 28px */
     --transition-speed: 0.3s;
     --azul-oscuro: #043A5B;
     --azul-claro: #3498db;
@@ -44,7 +44,10 @@ body {
     transition: var(--transition-speed);
 }
 
-.menu-button:hover { background: var(--hover-bg); }
+.menu-button:hover { 
+    background: var(--hover-bg);
+    color: white;
+}
 
 .sidebar {
     position: fixed;
@@ -62,42 +65,50 @@ body {
 
 .menu-toggle:not(:checked) ~ .sidebar { width: var(--sidebar-collapsed); }
 
-.menu-list { list-style-type: none; }
-
-.menu-item-first {
-    padding: 18px 20px;
-    transition: var(--transition-speed);
-    white-space: nowrap;
-    margin-bottom: 5px;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1),  0px 2px 5px rgba(0, 0, 0, 0.1);
+.menu-list { 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-.menu-item-first:hover {
-    background-color: var(--hover-bg);
+.menu-item-first, .menu-item {
+    padding: 0 !important;
+    margin: 0 !important;
 }
-
-.menu-item {
-    padding: 18px 20px;
-    transition: var(--transition-speed);
-    white-space: nowrap;
-    margin-bottom: 5px;
-    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.1);
-}
-
-.menu-item:hover { background-color: var(--hover-bg); }
 
 .menu-link {
-    display: flex;
+    display: flex !important;
     align-items: center;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 18px 25px !important;
     color: var(--text-color);
     text-decoration: none;
     font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition-speed);
+}
+
+.menu-item-first .menu-link {
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1), 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item .menu-link {
+    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-link:hover {
+    background-color: var(--hover-bg);
+    color: white;
 }
 
 .menu-icon, .fallback-icon {
     width: var(--icon-size);
     height: var(--icon-size);
-    margin-right: 15px;
+    margin-right: 18px; /* Más espacio entre ícono y texto */
     object-fit: contain;
 }
 
@@ -105,6 +116,7 @@ body {
     transition: opacity var(--transition-speed), visibility var(--transition-speed);
     opacity: 1;
     visibility: visible;
+    white-space: nowrap; /* Evita saltos de línea */
 }
 
 .menu-toggle:not(:checked) ~ .sidebar .menu-label {
@@ -112,7 +124,7 @@ body {
     visibility: hidden;
 }
 
-/* Contenido principal --------------------------------------------------------------------------------------------------------------------------*/
+/* Contenido principal */
 .content {
     margin-left: var(--sidebar-expanded);
     margin-right: 260px;
@@ -170,12 +182,12 @@ h1, h2 {
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-/* Contenido principal - Tarjetas de platillos */
+
 .platillo-card .platillo-nombre {
     padding: 15px 0;
     text-align: center;
     font-weight: bold;
-    color: #2c3e50; /* Color azul oscuro para las tarjetas del main */
+    color: #2c3e50;
 }
 
 .platillo-imagen {
@@ -207,7 +219,7 @@ h1, h2 {
     color: white;
 }
 
-/* Panel derecho--------------------------------------------------------------------------------------------------------------------------------- */
+/* Panel derecho */
 .right-panel {
     width: 260px;
     background-color: var(--main-bg);
@@ -249,7 +261,6 @@ h1, h2 {
     border-top: 1px solid #ddd;
     margin-top: auto;
     background-color: #f5f5f5;
-    
 }
 
 /* Tarjetas de pedido */
@@ -264,17 +275,17 @@ h1, h2 {
     align-items: center;
     box-shadow: 0 2px 3px rgba(0,0,0,0.1);
 }
-/* Panel derecho - Tarjetas de pedido */
+
 .platillo-pedido .platillo-nombre {
     font-weight: bold;
     font-size: 1rem;
     margin: 0;
-    color: white; /* Color blanco para las tarjetas del panel derecho */
+    color: white;
 }
 
 .platillo-precio {
     font-size: 1rem;
-    color: white; /* Color blanco para el precio */
+    color: white;
     padding-top: 10px;
     text-align: left;
 }
@@ -285,19 +296,20 @@ h1, h2 {
     gap: 10px;
 }
 
-.opciones-link {
+.opciones-btn {
     color: white;
     background: none;
-    text-decoration: none;
+    border: none;
     display: inline-block;
     border-radius: 3px;
     cursor: pointer;
     transition: all 0.3s;
     padding: 0 10px;
     font-size: 1.2rem;
+    line-height: 1;
 }
 
-.opciones-link:hover {
+.opciones-btn:hover {
     background-color: var(--hover-bg);
     transform: scale(1.1);
 }
@@ -340,7 +352,6 @@ h1, h2 {
 .boton-mesa, .boton-ordenar {
     padding: 12px;
     text-align: center;
-    text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s;
@@ -348,13 +359,25 @@ h1, h2 {
     cursor: pointer;
     font-size: 0.9rem;
     color: white;
+    width: 100%;
+    font-family: 'Cabin', sans-serif;
 }
 
-.boton-mesa { background-color: #607B92FF; }
-.boton-mesa:hover { background-color: #043A5B; }
+.boton-mesa { 
+    background-color: #607B92FF;
+}
 
-.boton-ordenar { background-color: var(--verde); }
-.boton-ordenar:hover { background-color: #218838; }
+.boton-mesa:hover { 
+    background-color: #043A5B; 
+}
+
+.boton-ordenar { 
+    background-color: var(--verde); 
+}
+
+.boton-ordenar:hover { 
+    background-color: #218838; 
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -365,4 +388,9 @@ h1, h2 {
     }
     
     .menu-button { z-index: 1001; }
+
+    /* Ajuste para móviles */
+    :root {
+        --sidebar-expanded: 220px;
+    }
 }

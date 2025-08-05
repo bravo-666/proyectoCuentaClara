@@ -1,41 +1,40 @@
-/* Variables CSS para fácil personalización */
 :root {
-    /* Colores principales y de fondo */
     --main-bg: #f5f5f5;
     --hover-bg: #607B92FF;
     --text-color: #2c3e50;
     --content-bg: #f5f5f5;
-    
-    /* Dimensiones del sidebar y tamaño de iconos */
-    --sidebar-expanded: 200px;
-    --sidebar-collapsed: 70px;
-    --icon-size: 24px;
-    
-    /* Velocidad de transiciones */
+    --azul-oscuro: #043A5B;
+    --azul-claro: #3498db;
+    --verde: #28a745;
+    --rojo: #ff6b6b;
+    --sidebar-expanded: 250px;
+    --sidebar-collapsed: 80px;
+    --icon-size: 28px;
     --transition-speed: 0.3s;
 }
 
-/* Reset básico para quitar márgenes y paddings por defecto */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales del body */
 body {
     font-family: 'Cabin', sans-serif;
     background-color: var(--content-bg);
-    transition: margin-left var(--transition-speed);
     min-height: 100vh;
+    color: var(--text-color);
+    transition: margin-left var(--transition-speed);
 }
 
-/* Oculta el checkbox que controla el menú lateral */
-.menu-toggle {
-    display: none;
+/* ------------------------- */
+/* ESTILOS DEL MENÚ LATERAL */
+/* ------------------------- */
+
+.menu-toggle { 
+    display: none; 
 }
 
-/* Botón del menú hamburguesa */
 .menu-button {
     position: fixed;
     top: 20px;
@@ -50,12 +49,11 @@ body {
     transition: var(--transition-speed);
 }
 
-/* Efecto hover para el botón del menú */
 .menu-button:hover {
     background: var(--hover-bg);
+    color: white;
 }
 
-/* Menú lateral (sidebar) */
 .sidebar {
     position: fixed;
     top: 0;
@@ -70,130 +68,105 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Sidebar contraído cuando el checkbox no está marcado */
 .menu-toggle:not(:checked) ~ .sidebar {
     width: var(--sidebar-collapsed);
 }
 
-/* Lista de items del menú lateral */
 .menu-list {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Estilos para cada item del menú */
-
-.menu-item-first {
-    padding: 18px 20px;
-    transition: var(--transition-speed);
-    white-space: nowrap;
-    margin-bottom: 5px;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1),  0px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.menu-item-first:hover {
-    background-color: var(--hover-bg);
-}
-
+.menu-item-first, 
 .menu-item {
-    padding: 18px 20px;
-    transition: var(--transition-speed);
-    white-space: nowrap;
-    margin-bottom: 5px;
-    box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-/* Efecto hover en los items del menú */
-.menu-item:hover {
-    background-color: var(--hover-bg);
-}
-
-/* Enlaces dentro del menú lateral */
 .menu-link {
-    display: flex;
+    display: flex !important;
     align-items: center;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 16px;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 18px 25px !important;
+    background: none !important;
+    border: none !important;
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    transition: var(--transition-speed) !important;
+    font-family: inherit !important;
 }
 
-/* Iconos del menú y fallback */
+.menu-item-first .menu-link {
+    box-shadow: 0px -2px 5px rgba(0,0,0,0.1), 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-item .menu-link {
+    box-shadow: 0px 5px 4px rgba(0,0,0,0.1);
+}
+
+.menu-link:hover {
+    background-color: var(--hover-bg) !important;
+    color: white !important;
+}
+
 .menu-icon, .fallback-icon {
     width: var(--icon-size);
     height: var(--icon-size);
-    margin-right: 15px;
+    margin-right: 18px;
     object-fit: contain;
 }
 
-/* Etiqueta de texto de los items del menú */
 .menu-label {
-    transition: 
-        opacity var(--transition-speed), 
-        visibility var(--transition-speed);
+    transition: opacity var(--transition-speed), visibility var(--transition-speed);
     opacity: 1;
     visibility: visible;
+    white-space: nowrap;
 }
 
-/* Oculta el texto de los items cuando el menú está contraído */
 .menu-toggle:not(:checked) ~ .sidebar .menu-label {
     opacity: 0;
     visibility: hidden;
 }
 
-/* Contenido principal de la página */
+/* ------------------------- */
+/* CONTENIDO PRINCIPAL */
+/* ------------------------- */
+
 .content {
     margin-left: var(--sidebar-expanded);
     padding: 20px;
     transition: margin-left var(--transition-speed);
 }
 
-/* Ajusta el contenido cuando el menú está contraído */
 .menu-toggle:not(:checked) ~ .content {
     margin-left: var(--sidebar-collapsed);
 }
 
-/* Estilos responsivos para pantallas pequeñas */
-@media (max-width: 768px) {
-    /* Ajusta el contenido cuando el menú está abierto */
-    .menu-toggle:checked ~ .content {
-        margin-left: var(--sidebar-collapsed);
-        margin-right: 250px; /* Mantén el mismo margen derecho */
-    }
-    /* Asegura que el botón esté sobre el menú */
-    .menu-button {
-        z-index: 1001;
-    }
-}
-
-/*--------------------------------------------------------------------------------------------- */
-
-/* Contenedor principal del contenido */
-.content {
-    margin-left: var(--sidebar-expanded);
-    margin-right: 0; /* Añade este margen derecho igual al ancho del panel */
-    padding: 20px;
-    transition: margin-left var(--transition-speed);
-}
-
-/* Tarjeta de título */
 .title-card {
-    font-family: 'Cabin', sans-serif;
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background-color: #043A5B;
+    background-color: var(--azul-oscuro);
     align-items: center;
     margin: auto;
     margin-bottom: 30px;
 }
 
-/* Título principal */
 h1 {
     font-size: 32px;
-    color: white;                   /* Color de texto oscuro */
-    text-align: center;             /* Centrado del texto */
+    color: white;
+    text-align: center;
 }
 
-/* Estilos para la tabla principal */
+/* ------------------------- */
+/* TABLA Y FILTROS */
+/* ------------------------- */
+
 .table {
     border: 2px solid #ddd;
     border-radius: 5px;
@@ -203,58 +176,32 @@ h1 {
     margin-top: 20px;
 }
 
-/* Tabla del menú ------------------------ */
 .menu-table {
     width: 100%;
     border-collapse: collapse;
-    
 }
 
-/* Encabezados de la tabla */
 .menu-table th {
-    background-color: #043A5B;
+    background-color: var(--azul-oscuro);
     color: white;
     padding: 12px;
     text-align: left;
-    
-    
 }
 
-/* Celdas de la tabla */
 .menu-table td {
     padding: 12px;
     border-bottom: 1px solid #eee;
     vertical-align: top;
-    
 }
 
-/* Quita el borde inferior a la última fila */
 .menu-table tr:last-child td {
     border-bottom: none;
 }
 
-/* Efecto hover en las filas de la tabla */
 .menu-table tr:hover {
     background-color: #f5f5f5;
 }
 
-/* Estilos para el checkbox -------------------------------- */
-.active-checkbox {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ddd;
-    border-radius: 3px;
-    cursor: pointer;
-    position: relative;
-    vertical-align: middle;
-}
-
-/* N/A checkbox y/o botón de editar/agregar */
-
-/* Estilo para la lista de ingredientes ---------------------------------------------- */
 .ingredients-list {
     list-style-type: none;
     padding: 0;
@@ -271,10 +218,9 @@ h1 {
     content: "•";
     position: absolute;
     left: 0;
-    color: #043A5B;
+    color: var(--azul-oscuro);
 }
 
-/* Contenedor de filtros */
 .filtros-container {
     display: flex;
     gap: 15px;
@@ -286,7 +232,6 @@ h1 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Grupo de filtros individual */
 .filtro-group {
     display: flex;
     flex-direction: column;
@@ -295,10 +240,9 @@ h1 {
 .filtros-container label {
     margin-bottom: 5px;
     font-weight: 500;
-    color: #043A5B;
+    color: var(--azul-oscuro);
 }
 
-/* Inputs de filtro */
 .filtro-input {
     padding: 8px 12px;
     border: 1px solid #ddd;
@@ -309,14 +253,13 @@ h1 {
 
 .filtro-input:focus {
     outline: none;
-    border-color: #043A5B;
+    border-color: var(--azul-oscuro);
     box-shadow: 0 0 0 2px rgba(4, 58, 91, 0.2);
 }
 
-/* Botones de filtro */
 .filtro-btn {
     padding: 8px 15px;
-    background-color: #043A5B;
+    background-color: var(--azul-oscuro);
     color: white;
     border: none;
     border-radius: 4px;
@@ -342,8 +285,25 @@ h1 {
     background-color: #4a6a80;
 }
 
-/* Responsive para móviles */
+/* ------------------------- */
+/* RESPONSIVE DESIGN */
+/* ------------------------- */
+
 @media (max-width: 768px) {
+    .content {
+        margin-right: 0;
+    }
+
+    .menu-toggle:checked ~ .content {
+        margin-left: 0;
+        filter: brightness(0.7);
+        pointer-events: none;
+    }
+    
+    .menu-button {
+        z-index: 1001;
+    }
+
     .filtros-container {
         flex-direction: column;
         align-items: stretch;
@@ -353,5 +313,18 @@ h1 {
     .filtro-btn, .reset-btn {
         width: 100%;
         padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --sidebar-expanded: 220px;
+        --sidebar-collapsed: 70px;
+    }
+    
+    .menu-table th, 
+    .menu-table td {
+        padding: 8px;
+        font-size: 0.9rem;
     }
 }

@@ -7,102 +7,83 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../clases_CSS/styleCorte.css">
-    
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corte - Cuenta Clara</title>
-    <!-- Fuente de iconos de respaldo (se usará si no cargan tus imágenes) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Corte - Cuenta Clara</title>
 </head>
 <body>
-    <!-- Checkbox invisible para controlar el menú -->
     <input type="checkbox" id="menu-toggle" class="menu-toggle">
     
-    <!-- Botón hamburguesa - siempre visible -->
     <label for="menu-toggle" class="menu-button">
         <i class="fas fa-bars"></i>
     </label>
 
-    <!-- Menú lateral -->
+    <!-- Menú lateral con botones -->
     <nav class="sidebar">
         <ul class="menu-list">
-            <!-- Cada item tiene su propia clase y estructura accesible -->
             <li class="menu-item-first">
-                <a href="menu.html" class="menu-link">
+                <button onclick="window.location.href='menu.html'" class="menu-link">
                     <i class="fas fa-utensils fallback-icon"></i>
                     <span class="menu-label">Menú</span>
-                </a>
+                </button>
             </li>
             
             <li class="menu-item">
-                <a href="mesas.html" class="menu-link">
+                <button onclick="window.location.href='mesas.html'" class="menu-link">
                     <i class="fas fa-chair fallback-icon"></i>
                     <span class="menu-label">Mesas</span>
-                </a>
+                </button>
             </li>
             
             <li class="menu-item">
-                <a href="cuentas.html" class="menu-link">
+                <button onclick="window.location.href='cuentas.html'" class="menu-link">
                     <i class="fas fa-receipt fallback-icon"></i>
                     <span class="menu-label">Cuentas</span>
-                </a>
+                </button>
             </li>
             
             <li class="menu-item">
-                <a href="corte.html" class="menu-link">
+                <button onclick="window.location.href='corte.html'" class="menu-link">
                     <i class="fas fa-cut fallback-icon"></i>
                     <span class="menu-label">Corte</span>
-                </a>
+                </button>
             </li>
             
             <li class="menu-item">
-                <a href="ajustes.html" class="menu-link">
+                <button onclick="window.location.href='ajustes.html'" class="menu-link">
                     <i class="fas fa-cog fallback-icon"></i>
                     <span class="menu-label">Ajustes</span>
-                </a>
+                </button>
             </li>
         </ul>
     </nav>
 
-<!-------------------------------------------------------------------->    
-    <!-- Contenido principal -->
     <main class="content">
         <div class="title-card">
             <h1>Corte de caja</h1>
         </div>
         
-        <input type="date" class="calendario" > <!-- Calendario -->
+        <input type="date" class="calendario">
         <p class="calendario-p">Elegir otro día de corte: </p>
 
-        <!-- El backend inyecta los valores -->
-        <!-- Sección de información de corte -->
-    <div class="card-info"> 
-        <!-- [BACKEND] Inyectar aquí el valor de entradas de efectivo -->
-        Entradas de efectivo: 
-    </div>
+        <div class="card-info"> 
+            Entradas de efectivo: 
+        </div>
 
-    <div class="card-info">
-        <!-- [BACKEND] Inyectar aquí el valor de gastos en materia -->
-        Gastos en materia:  
-    </div>
+        <div class="card-info">
+            Gastos en materia:  
+        </div>
 
-    <div class="card-info">
-        <!-- [BACKEND] Inyectar aquí el valor de dinero en caja -->
-        Dinero en caja: 
-    </div>
-
+        <div class="card-info">
+            Dinero en caja: 
+        </div>
     </main>
 
-<!------------------------------------------------------------------------------------------------------>
-    <!-- Panel derecho -->
     <div class="right-panel">
         <div class="right-panel-content">
             <div class="title-card">
                 <h2>Ventas totales</h2>
             </div>
 
-            <!-- Formulario para pagos extra - Backend procesa POST -->
             <form method="POST" class="pagos-form">
                 <div class="form-group">
                     <label for="monto-extra">Monto extra:</label>
@@ -113,7 +94,6 @@
                 </button>
             </form>
 
-            <!-- Formulario para calcular corte - Backend procesa POST -->
             <form method="POST" class="corte-form">
                 <div class="form-group">
                     <label for="efectivo-inicial">Efectivo inicial:</label>
@@ -123,9 +103,7 @@
                     Calcular corte
                 </button>
             </form>
-
         </div>
     </div>
-
 </body>
 </html>

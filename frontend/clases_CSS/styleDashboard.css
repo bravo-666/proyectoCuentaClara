@@ -1,21 +1,14 @@
-/* Variables CSS para fácil personalización */
 :root {
-    /* Colores */
     --main-bg: #f5f5f5;
     --hover-bg: #607B92FF;
     --text-color: #2c3e50;
     --content-bg: #f5f5f5;
-    
-    /* Dimensiones */
-    --sidebar-expanded: 200px;
-    --sidebar-collapsed: 70px;
-    --icon-size: 24px;
-    
-    /* Transiciones */
+    --sidebar-expanded: 250px; /* Aumentado de 200px */
+    --sidebar-collapsed: 80px; /* Aumentado de 70px */
+    --icon-size: 28px; /* Aumentado de 24px */
     --transition-speed: 0.3s;
 }
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -27,15 +20,12 @@ body {
     background-color: var(--content-bg);
     transition: margin-left var(--transition-speed);
     min-height: 100vh;
-    
 }
 
-/* Ocultar checkbox que controla el menú */
 .menu-toggle {
     display: none;
 }
 
-/* Botón del menú hamburguesa */
 .menu-button {
     position: fixed;
     top: 20px;
@@ -48,15 +38,12 @@ body {
     padding: 10px;
     border-radius: 10%;
     transition: var(--transition-speed);
-    
 }
 
 .menu-button:hover {
     background: var(--hover-bg);
-    
 }
 
-/* Menú lateral */
 .sidebar {
     position: fixed;
     top: 0;
@@ -71,96 +58,82 @@ body {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Estado contraído del menú */
 .menu-toggle:not(:checked) ~ .sidebar {
     width: var(--sidebar-collapsed);
 }
 
-
-
-/* Lista de items del menú */
 .menu-list {
     list-style-type: none;
 }
 
-/* Items individuales del menú */
-
-.menu-item-first {
-    padding: 18px 20px;
-    transition: var(--transition-speed);
-    white-space: nowrap;
-    margin-bottom: 5px;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1),  0px 2px 5px rgba(0, 0, 0, 0.1);
+.menu-item-first, .menu-item {
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
-.menu-item-first:hover {
-    background-color: var(--hover-bg);
-}
-
-.menu-item {
-    padding: 18px 20px;
-    transition: var(--transition-speed);
-    white-space: nowrap;
-    margin-bottom: 5px;
-    box-shadow: 0px 2px 5px  rgba(0, 0, 0, 0.1);
-}
-
-.menu-item:hover {
-    background-color: var(--hover-bg);
-}
-
-/* Enlaces del menú */
 .menu-link {
-    display: flex;
+    display: flex !important;
     align-items: center;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 16px;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 18px 25px !important;
+    background: none !important;
+    border: none !important;
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    text-align: left !important;
+    transition: var(--transition-speed) !important;
+    font-family: 'Cabin', sans-serif !important;
 }
 
-/* Contenedor de iconos */
+.menu-item-first .menu-link {
+    box-shadow: 0px -2px 5px rgba(0,0,0,0.1), 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-item .menu-link {
+    box-shadow: 0px 5px 4px rgba(0,0,0,0.1);
+}
+
+.menu-link:hover {
+    background-color: var(--hover-bg) !important;
+    color: white !important;
+}
+
 .menu-icon, .fallback-icon {
     width: var(--icon-size);
     height: var(--icon-size);
-    margin-right: 15px;
+    margin-right: 18px;
     object-fit: contain;
 }
 
-
-
-/* Texto de los items */
 .menu-label {
-    transition: 
-        opacity var(--transition-speed), 
-        visibility var(--transition-speed);
+    transition: opacity var(--transition-speed), visibility var(--transition-speed);
     opacity: 1;
     visibility: visible;
+    white-space: nowrap;
 }
 
-/* Ocultar texto cuando el menú está contraído */
 .menu-toggle:not(:checked) ~ .sidebar .menu-label {
     opacity: 0;
     visibility: hidden;
 }
 
-/* Contenido principal */
 .content {
     margin-left: var(--sidebar-expanded);
     padding: 20px;
     transition: margin-left var(--transition-speed);
 }
 
-/* Ajustar contenido cuando el menú está contraído */
 .menu-toggle:not(:checked) ~ .content {
     margin-left: var(--sidebar-collapsed);
 }
 
-/* Estilos para el título del dashboard */
 .title-card {
     background-color: var(--main-bg);
     padding: 20px;
     border-radius: 8px;
-    
     margin-bottom: 20px;
     text-align: center;
 }
@@ -185,18 +158,13 @@ h1 {
     border-radius: 10px;
 }
 
-/* Estilos responsivos */
 @media (max-width: 768px) {
-
-    
-    /* Oscurecer contenido cuando el menú está abierto */
     .menu-toggle:checked ~ .content {
         margin-left: 0;
         filter: brightness(0.7);
-        pointer-events: none; /* Evitar interacciones con el contenido */
+        pointer-events: none;
     }
     
-    /* Asegurar que el botón esté sobre el menú */
     .menu-button {
         z-index: 1001;
     }

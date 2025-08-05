@@ -20,34 +20,34 @@
     <nav class="sidebar">
         <ul class="menu-list">
             <li class="menu-item-first">
-                <a href="menu.html" class="menu-link">
+                <button onclick="window.location.href='menu.html'" class="menu-link">
                     <i class="fas fa-utensils fallback-icon"></i>
                     <span class="menu-label">Menú</span>
-                </a>
+                </button>
             </li>
             <li class="menu-item">
-                <a href="mesas.html" class="menu-link">
+                <button onclick="window.location.href='mesas.html'" class="menu-link">
                     <i class="fas fa-chair fallback-icon"></i>
                     <span class="menu-label">Mesas</span>
-                </a>
+                </button>
             </li>
             <li class="menu-item">
-                <a href="cuentas.html" class="menu-link">
+                <button onclick="window.location.href='cuentas.html'" class="menu-link">
                     <i class="fas fa-receipt fallback-icon"></i>
                     <span class="menu-label">Cuentas</span>
-                </a>
+                </button>
             </li>
             <li class="menu-item">
-                <a href="corte.html" class="menu-link">
+                <button onclick="window.location.href='corte.html'" class="menu-link">
                     <i class="fas fa-cut fallback-icon"></i>
                     <span class="menu-label">Corte</span>
-                </a>
+                </button>
             </li>
             <li class="menu-item">
-                <a href="ajustes.html" class="menu-link">
+                <button onclick="window.location.href='ajustes.html'" class="menu-link">
                     <i class="fas fa-cog fallback-icon"></i>
                     <span class="menu-label">Ajustes</span>
-                </a>
+                </button>
             </li>
         </ul>
     </nav>
@@ -59,17 +59,6 @@
 
         <form action="procesar_pedido.php" method="post" class="menu-form">
             <div class="menu-container">
-                <!-- Plantilla vacía para rellenar con datos traídos de la base de datos -->
-                <!--
-                <label class="platillo-option">
-                    <input type="checkbox" name="platillos[]" value="{id_platillo}" class="platillo-input">
-                    <div class="platillo-card">
-                        <div class="platillo-imagen" style="background-image: url('{url_imagen_platillo}');"></div>
-                        <div class="platillo-nombre">{nombre_platillo}</div>
-                    </div>
-                </label>
-                -->
-                <!-- ...platillos estáticos o generados dinámicamente... -->
                 <label class="platillo-option">
                     <input type="checkbox" name="platillos[]" value="1" class="platillo-input">
                     <div class="platillo-card">
@@ -101,8 +90,6 @@
                         <div class="platillo-nombre">Platillo 4</div>
                     </div>
                 </label>
-
-                
             </div>
         </form>
 
@@ -118,7 +105,7 @@
                             <div class="platillo-precio">• $35.00</div>
                         </div>
                         <div class="platillo-acciones">
-                            <a href="Ingredientes_opcionales/editar_ingre.html" class="opciones-link">⋮</a>
+                            <button onclick="window.location.href='Ingredientes_opcionales/editar_ingre.html'" class="opciones-btn">⋮</button>
                             <button class="eliminar-btn">×</button>
                         </div>
                     </div>
@@ -128,7 +115,7 @@
                             <div class="platillo-precio">• $35.00</div>
                         </div>
                         <div class="platillo-acciones">
-                            <a href="Ingredientes_opcionales/editar_ingre.html" class="opciones-link">⋮</a>
+                            <button onclick="window.location.href='Ingredientes_opcionales/editar_ingre.html'" class="opciones-btn">⋮</button>
                             <button class="eliminar-btn">×</button>
                         </div>
                     </div>
@@ -141,22 +128,12 @@
                     </div>
                     
                     <div class="botones-container">
-                        <a href="mesas.html" class="boton-mesa">Asignar mesa</a>
-                        <a href="#" class="boton-ordenar">Ordenar</a>
+                        <button onclick="window.location.href='mesas.html'" class="boton-mesa">Asignar mesa</button>
+                        <button class="boton-ordenar">Ordenar</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <!-- Plantilla vacía para rellenar con datos traídos de la base de datos -->
-    <!--
-    <div class="platillo-pedido">
-        <div class="platillo-nombre">{nombre_platillo}</div>
-        <div class="platillo-acciones">
-            <a href="#" class="opciones-link">⋮</a>
-            <button class="eliminar-btn">×</button>
-        </div>
-    </div>
-    -->
 </body>
 </html>
