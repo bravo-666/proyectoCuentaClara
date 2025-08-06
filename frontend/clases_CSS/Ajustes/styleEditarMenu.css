@@ -245,7 +245,8 @@ h1 {
 }
 
 /* Botón flotante */
-.floating-btn {
+/* Botón flotante (actualizado para button) */
+.add-item-btn.floating-btn {
     color: white;
     background-color: var(--verde);
     position: fixed;
@@ -262,13 +263,22 @@ h1 {
     border: none;
     text-decoration: none;
     font-family: 'Cabin', sans-serif;
+    cursor: pointer;
 }
 
-.floating-btn:hover {
+.add-item-btn.floating-btn:hover {
     background-color: #218838;
     transform: translateY(-3px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
     color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .add-item-btn.floating-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Estilo para la lista de ingredientes */

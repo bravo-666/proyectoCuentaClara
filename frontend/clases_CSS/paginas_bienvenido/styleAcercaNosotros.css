@@ -35,7 +35,7 @@ body {
 
 h1 {
     font-family: 'Cabin';
-    font-size: clamp(24px, 5vw, 50px); /* Tamaño responsive */
+    font-size: clamp(24px, 5vw, 50px);
     padding: 15px 20px;
     border-radius: 5px;
     color: #FFFFFF;
@@ -45,10 +45,8 @@ h1 {
     width: fit-content;
 }
 
-.migas {
-    position: static;
-    top: 20px;
-    right: 400px;
+/* Estilo del botón Inicio */
+.btn-inicio {
     font-family: 'Cabin', sans-serif;
     font-size: 16px;
     color: #2A2F8C;
@@ -57,12 +55,20 @@ h1 {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-inicio:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 /* Card responsive */
 .card {
     text-align: center;
-    background: linear-gradient(180deg, #FAFAFB 0%, #DEE1E6 100%);
+    background: white; /* Cambiado a fondo blanco */
     padding: 20px;
     width: 90%;
     max-width: 1200px;
@@ -75,7 +81,7 @@ h1 {
 
 h2 {
     font-family: 'Cabin';
-    font-size: clamp(18px, 3vw, 24px); /* Tamaño responsive */
+    font-size: clamp(18px, 3vw, 24px);
     text-align: left;
     margin-top: 20px;
     color: #607B92;
@@ -83,7 +89,7 @@ h2 {
 
 p {
     font-family: 'Cabin';
-    font-size: clamp(16px, 2.5vw, 22px); /* Tamaño responsive */
+    font-size: clamp(16px, 2.5vw, 22px);
     text-align: left;
     line-height: 1.5;
 }
@@ -96,10 +102,8 @@ p {
         gap: 15px;
     }
     
-    .logo, .migas {
+    .logo, .btn-inicio {
         margin: 10px 0;
-        position: static;
-        text-decoration: none;
     }
     
     .card {
@@ -115,5 +119,10 @@ p {
     
     .card {
         margin: 10px auto;
+    }
+    
+    .btn-inicio {
+        font-size: 14px;
+        padding: 6px 12px;
     }
 }

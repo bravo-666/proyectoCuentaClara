@@ -1,26 +1,50 @@
+:root {
+    --main-bg: #f5f5f5;
+    --hover-bg: #607B92;
+    --text-color: #2c3e50;
+    --azul-oscuro: #043A5B;
+    --verde: #28a745;
+    --rojo: #dc3545;
+    --transition-speed: 0.3s;
+}
+
 body {
     font-family: 'Cabin', sans-serif;
-    background-color: #f5f5f5;
+    background-color: var(--main-bg);
     margin: 0;
     padding: 20px;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.title {
-    
-    font-family: 'Cabin', sans-serif;
-    text-align: center;
-    width: 50%;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #043A5B;
+/* Botón de retroceso */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--hover-bg);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
     align-items: center;
-    margin: auto;
-    margin-bottom: 30px;
-    margin-top: -20px;
+    justify-content: center;
+    transition: all var(--transition-speed);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.back-btn:hover {
+    background-color: var(--azul-oscuro);
+    transform: translateX(-3px);
+}
+
+.back-btn i {
+    font-size: 1.2rem;
 }
 
 .box-card {
@@ -28,98 +52,100 @@ body {
     min-height: auto;
     border-radius: 10px;
     padding: 50px;
-    border-color: #4d6375;
-    box-shadow: 0px 4px 9px #171a1f1C, 0px 0px 2px #171a1f1F;
+    background-color: white;
+    box-shadow: 0px 4px 9px rgba(23, 26, 31, 0.1), 0px 0px 2px rgba(23, 26, 31, 0.1);
     border: 1px solid #dbdee5;
+    position: relative;
+    margin-top: 20px;
+}
+
+.title {
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--azul-oscuro);
+    margin: 0 auto 30px;
+}
+
+h2 {
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.card {
+    margin-bottom: 20px;
 }
 
 .card-input {
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 96.7%;                       /* Ancho completo */
-    padding: 0.8rem;                   /* Espaciado interno */
-    border: 1px solid #e2e8f0;         /* Borde sutil */
-    border-radius: 6px;                /* Bordes redondeados */
-    font-size: 1rem;                   /* Tamaño de fuente */
-    transition: all 0.2s;              /* Transición para efectos */
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all var(--transition-speed);
 }
 
 .card-input:focus {
-     outline: none;                     /* Elimina contorno por defecto */
-    border-color: #043A5BFF;             /* Borde azul */
-    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+    outline: none;
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 0 2px rgba(4, 58, 91, 0.2);
 }
 
-/* Contenedor del formulario */
-.form-container {
-    background: white;                 /* Fondo blanco */
-    border-radius: 10px;               /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave */
-    width: 90%;                       /* Ancho relativo */
-    max-width: 500px;                  /* Ancho máximo */
-    padding: 2rem;                     /* Espaciado interno */
+/* Placeholders */
+.card-input::placeholder,
+.form-input::placeholder {
+    color: #aaa;
+    font-style: italic;
 }
 
-/* Estilo del título */
-h2 {
-    font-size: 32px;
-    color: white;                   /* Color de texto oscuro */
-    text-align: center;                /* Centrado del texto */
-    margin-bottom: 1.5rem;             /* Espaciado inferior */
+.card-input:focus::placeholder,
+.form-input:focus::placeholder {
+    color: transparent;
 }
 
-/* 
- * GRUPOS DE FORMULARIO 
- * Estilos para los contenedores de cada campo
- */
+/* Auto-incremento de campos */
 .form-group {
-    margin-bottom: 0;               /* Espacio entre campos */
-    overflow: hidden;                  /* Oculta contenido que sobresale */
-    max-height: 0;                     /* Altura inicial cero (oculto) */
-    opacity: 0;                        /* Transparencia inicial */
-    transition: all 0.3s ease-out;     /* Animación suave */
+    margin-bottom: 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all var(--transition-speed) ease-out;
 }
 
-/* Primer campo siempre visible */
 .form-group:first-of-type {
-    max-height: 100px;                 /* Altura suficiente */
-    opacity: 1;                        /* Totalmente visible */
+    max-height: 100px;
+    opacity: 1;
 }
 
-/* 
- * ESTILOS DE INPUTS 
- * Diseño de los campos de entrada
- */
 .form-input {
-    width: 96.7%;                       /* Ancho completo */
-    padding: 0.8rem;                   /* Espaciado interno */
-    border: 1px solid #e2e8f0;         /* Borde sutil */
-    border-radius: 6px;                /* Bordes redondeados */
-    font-size: 1rem;                   /* Tamaño de fuente */
-    transition: all 0.2s;              /* Transición para efectos */
-    
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all var(--transition-speed);
 }
 
-/* Efecto cuando el input tiene foco */
 .form-input:focus {
-    outline: none;                     /* Elimina contorno por defecto */
-    border-color: #043A5BFF;             /* Borde azul */
-    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+    outline: none;
+    border-color: var(--azul-oscuro);
+    box-shadow: 0 0 0 2px rgba(4, 58, 91, 0.2);
 }
 
-/* 
- * MOSTRAR SIGUIENTE CAMPO 
- * Reglas para mostrar campos adicionales automáticamente
- */
 .form-group:has(.form-input:not(:placeholder-shown)) + .form-group,
 .form-group:focus-within + .form-group {
-    max-height: 100px;                 /* Altura expandida */
-    opacity: 1;                        /* Totalmente visible */
-    margin-top: 1rem;               /* Espacio superior */
-    
+    max-height: 100px;
+    opacity: 1;
+    margin-top: 1rem;
 }
 
-/* Estilos para la sección de foto */
+/* Sección de foto */
 .foto-section {
     margin: 20px 0;
 }
@@ -134,16 +160,16 @@ h2 {
 .file-input-label {
     display: inline-block;
     padding: 0.8rem;
-    background-color: #607B92;
+    background-color: var(--hover-bg);
     color: white;
     border-radius: 6px;
     text-align: center;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background var(--transition-speed);
 }
 
 .file-input-label:hover {
-    background-color: #043A5B;
+    background-color: var(--azul-oscuro);
 }
 
 .file-input {
@@ -165,77 +191,72 @@ h2 {
     padding-left: 5px;
 }
 
-/* 
- * BOTÓN DE ENVÍO 
- * Estilos para el botón de submit
- */
+/* Botones */
 .botones-container {
     display: flex;
     gap: 10px;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
-.guardar-btn, .cancelar-btn {
-    flex: 1; /* Ocupan el mismo espacio */
+.guardar-btn, .cancelar-btn, .ok-btn {
+    flex: 1;
     padding: 0.8rem;
     border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all var(--transition-speed);
     text-align: center;
+    border: none;
+    font-family: 'Cabin', sans-serif;
 }
 
 .guardar-btn {
-    background-color: #28a745;
+    background-color: var(--verde);
     color: white;
-    border: none;
 }
 
 .guardar-btn:hover {
-    background-color: #59bb70;
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .cancelar-btn {
-    background-color: #dc3545; /* Rojo para cancelar */
+    background-color: var(--rojo);
     color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .cancelar-btn:hover {
     background-color: #bb2d3b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Checkbox invisible para controlar la visibilidad del mensaje --------------------------------------------------*/
-.mensaje-checkbox {
-    position: absolute;
-    opacity: 0;
-    height: 0;
-    width: 0;
+.ok-btn {
+    background-color: var(--hover-bg);
+    color: white;
+    padding: 10px 25px;
+    margin-top: 10px;
 }
 
-/* Mensaje de confirmación (oculto por defecto) */
+.ok-btn:hover {
+    background-color: var(--azul-oscuro);
+}
+
+/* Mensaje de confirmación */
 .mensaje-confirmacion {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
     justify-content: center;
     align-items: center;
     z-index: 1000;
 }
 
-/* Mostrar mensaje cuando el checkbox está activado */
-.mensaje-checkbox:checked ~ .mensaje-confirmacion {
-    display: flex;
-}
-
-/* Contenido del mensaje de confirmación */
 .mensaje-contenido {
     background-color: white;
     padding: 30px;
@@ -245,61 +266,52 @@ h2 {
     max-width: 80%;
 }
 
-/* Texto del mensaje de confirmación */
 .mensaje-contenido p {
     font-size: 18px;
     margin-bottom: 20px;
     color: black;
 }
 
-/* Enlace con estilo de botón */
-.ok-btm {
-    /* Mantenemos los mismos estilos visuales del botón */
-    background-color: #607B92FF;
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    
-    /* Propiedades específicas para enlaces */
-    display: inline-block;  /* Permite padding y dimensiones como un botón */
-    text-decoration: none; /* Elimina el subrayado típico de los enlaces */
-    text-align: center;    /* Centra el texto como un botón */
-    
-    /* Transición suave */
-    transition: background-color 0.2s ease;
-}
-
-/* Efecto hover (igual que el botón) */
-.ok-btm:hover {
-    background-color: #043A5BFF;      /* Cambia el fondo al azul oscuro */
-    color: white;                     /* Mantiene el texto blanco */
-    text-decoration: none;            /* Previene subrayado en hover */
-}
-
-/* 
- * Diseño responsivo para pantallas pequeñas
- * Ajusta el tamaño y espaciado de los elementos principales
- */
+/* Responsive */
 @media (max-width: 768px) {
     .box-card {
-        min-width: 80vw;              /* El ancho mínimo de la tarjeta aumenta */
-        padding: 30px;                /* Menos padding para pantallas pequeñas */
+        min-width: 80vw;
+        padding: 30px;
     }
     
     .title {
-        width: 80%;                   /* El título ocupa más ancho */
-    }
-    
-    .colores-disponibles div {
-        flex-wrap: wrap;              /* Los colores se acomodan en varias líneas */
-        gap: 10px;                    /* Espacio entre colores */
+        width: 80%;
     }
     
     .mensaje-contenido {
-        padding: 20px;                /* Menos padding en el mensaje */
-        max-width: 90%;               /* El mensaje puede ser más ancho */
+        padding: 20px;
+        max-width: 90%;
+    }
+
+    .back-btn {
+        top: 15px;
+        left: 15px;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box-card {
+        min-width: 90vw;
+        padding: 20px;
+    }
+    
+    .botones-container {
+        flex-direction: column;
+    }
+    
+    .back-btn {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .back-btn i {
+        font-size: 1rem;
     }
 }

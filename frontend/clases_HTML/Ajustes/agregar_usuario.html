@@ -35,6 +35,8 @@
                 <input type="email" id="email" class="form-input" 
                     placeholder="Ej: usuario@ejemplo.com" required>
             </div>
+
+            
             
             <!-- Grupo para la contraseña -->
             <div class="form-group">
@@ -64,24 +66,28 @@
             
             <!-- Botones para guardar o cancelar -->
             <div class="botones-container">
-                <!-- Botón para guardar (controlado por checkbox) -->
-                <label for="mostrar-mensaje" role="button" class="guardar-btn">Guardar</label>
+                <!-- Botón para guardar -->
+                <button type="button" class="guardar-btn" id="guardar-btn">Guardar</button>
                 <!-- Botón para cancelar y regresar al centro de usuarios -->
-                <a href="centro_de_usuarios.html" class="guardar-btn cancelar-btn">Cancelar</a>
+                <button type="button" onclick="window.location.href='centro_de_usuarios.html'" class="guardar-btn cancelar-btn">Cancelar</button>
             </div>
         </form>
     </div>
 
-    <!-- Checkbox invisible para mostrar el mensaje de confirmación -->
-    <input type="checkbox" id="mostrar-mensaje" class="mensaje-checkbox">
-
     <!-- Mensaje de confirmación al guardar los datos -->
-    <div class="mensaje-confirmacion">
+    <div class="mensaje-confirmacion" id="mensaje-confirmacion">
         <div class="mensaje-contenido">
             <p>Datos guardados correctamente</p>
             <!-- Botón para cerrar el mensaje de confirmación -->
-            <a href="##" class="ok-btm">Ok</a>
+            <button class="ok-btn" onclick="window.location.href='centro_de_usuarios.html'">Ok</button>
         </div>
     </div>
+
+    <script>
+        // Mostrar mensaje de confirmación al hacer clic en Guardar
+        document.getElementById('guardar-btn').addEventListener('click', function() {
+            document.getElementById('mensaje-confirmacion').style.display = 'flex';
+        });
+    </script>
 </body>
 </html>

@@ -7,8 +7,8 @@
         <link rel="stylesheet" href="..\../clases_CSS/Ajustes/styleAgregarMesa.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> <!--Fuente del proyecto traída desde Google fonts-->
-
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     </head>
 
     <body>
@@ -20,29 +20,30 @@
             <div class="card">
                 <label for="mesa-número">Número de mesa: </label>
                 <input type="text" class="card-input" id="mesa-número" placeholder="Asigna un número" required>
-                
             </div>
         
-        <form>
-            <!-- Botón de envío del formulario -->
-        <div class="botones-container">
-            <label for="mostrar-mensaje" roll="button" class="guardar-btn">Guardar</label>  <!-- Checkbox que controla la visibilidad del mensaje de confirmación //copiar-->
-            <a href="editar_menu.html" class="guardar-btn cancelar-btn">Cancelar</a>
+            <form>
+                <!-- Botones de acción -->
+                <div class="botones-container">
+                    <button type="button" class="guardar-btn" id="guardar-btn">Guardar</button>
+                    <button type="button" onclick="window.location.href='editar_menu.html'" class="cancelar-btn">Cancelar</button>
+                </div>
+            </form>
+
+            <!-- Mensaje de confirmación -->
+            <div class="mensaje-confirmacion" id="mensaje-confirmacion">
+                <div class="mensaje-contenido">
+                    <p>¡Mesa agregada correctamente!</p>
+                    <button class="ok-btn" onclick="window.location.href='editar_mesas.html'">Ok</button>
+                </div>
+            </div>
         </div>
 
-        </form>
-
-        <!-- Checkbox invisible para controlar la visibilidad del mensaje de confirmación -->
-    <input type="checkbox" id="mostrar-mensaje" class="mensaje-checkbox">
-
-    <!-- Mensaje de confirmación que aparece al guardar -->
-    <div class="mensaje-confirmacion">
-        <div class="mensaje-contenido">
-            <p>Datos guardados.</p>
-            <!-- El label actúa como botón OK para cerrar el mensaje -->
-            <a href="agregar_platillo.html" class="ok-btm">Ok</a>
-        </div>
-    </div>
-
+        <script>
+            // Mostrar mensaje de confirmación al hacer clic en Guardar
+            document.getElementById('guardar-btn').addEventListener('click', function() {
+                document.getElementById('mensaje-confirmacion').style.display = 'flex';
+            });
+        </script>
     </body> 
 </html>

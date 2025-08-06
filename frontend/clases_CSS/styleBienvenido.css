@@ -22,7 +22,7 @@ body {
     width: 100%;
     max-width: 850px;
     height: auto;
-    aspect-ratio: 850/302; /* Mantiene la proporción original */
+    aspect-ratio: 850/302;
     margin: 5% auto;
     object-fit: contain;
 }
@@ -40,8 +40,8 @@ body {
     margin-top: 20px;
 }
 
-/* Estilos comunes para los items del menú */
-.header a {
+/* Estilos para los botones del header */
+.header-btn {
     font-family: 'Cabin';
     font-size: clamp(18px, 4vw, 40px);
     line-height: 1.4;
@@ -51,9 +51,12 @@ body {
     padding: 10px 15px;
     white-space: nowrap;
     transition: all 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
-.header a:hover {
+.header-btn:hover {
     color: #043A5BFF;
     transform: scale(1.05);
 }
@@ -70,8 +73,8 @@ body {
     margin-top: auto;
 }
 
-/* Estilos comunes para botones */
-.footer a {
+/* Estilos para los botones del footer */
+.footer button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -84,6 +87,8 @@ body {
     text-decoration: none;
     transition: all 0.3s ease;
     min-width: 120px;
+    cursor: pointer;
+    border: none;
 }
 
 .nuevo_usuario {
@@ -95,7 +100,7 @@ body {
 .iniciar_sesion {
     color: #607B92FF;
     background: #FFFFFF;
-    border: 1px solid #043A5BFF;
+    border: 1px solid #043A5BFF !important;
     box-shadow: 0px 8px 17px rgba(23, 26, 31, 0.15), 0px 0px 2px rgba(23, 26, 31, 0.12);
 }
 
@@ -116,7 +121,7 @@ body {
         max-width: 700px;
     }
     
-    .header a {
+    .header-btn {
         padding: 8px 12px;
     }
 }
@@ -133,7 +138,7 @@ body {
         padding: 15px;
     }
     
-    .header a {
+    .header-btn {
         white-space: normal;
         text-align: center;
         width: 100%;
@@ -145,7 +150,7 @@ body {
         align-items: center;
     }
     
-    .footer a {
+    .footer button {
         width: 80%;
         max-width: 300px;
     }
@@ -157,11 +162,11 @@ body {
         margin: 15% auto;
     }
     
-    .header a {
+    .header-btn {
         font-size: clamp(16px, 6vw, 24px);
     }
     
-    .footer a {
+    .footer button {
         padding: 10px 15px;
         width: 90%;
     }

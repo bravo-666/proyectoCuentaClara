@@ -7,10 +7,9 @@
         <link rel="stylesheet" href="..\../clases_CSS/Ingredientes_opcionales/styleEditarIngre.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet"> <!--Fuente del proyecto traída desde Google fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
         <!-- Iconos de Font Awesome para los checkboxes -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     </head>
 
     <body>
@@ -18,58 +17,58 @@
             <div class="title">
                 <h2>Editar ingredientes</h2> 
             </div>
-<!-- Título del platillo (debe ser dinámico desde backend) -->
-    <!-- BACKEND: Inyectar aquí el nombre del platillo -->
-                <h3 class="platillo-title">Platillos 1:</h3>
-                
-                <!-- Lista de ingredientes con checkboxes -->
-                <p class="instrucciones">Selecciona los ingredientes que deseas quitar:</p>
-                <ul class="lista_ingredientes">
-                    <!-- BACKEND: Inyectar aquí la lista de ingredientes con checkboxes -->
-                    <li class="ingrediente-item">
-                        <input type="checkbox" id="ingrediente1" class="ingrediente-checkbox">
-                        <label for="ingrediente1" class="ingrediente-label">Ingrediente 1</label>
-                    </li>
-                    <li class="ingrediente-item">
-                        <input type="checkbox" id="ingrediente2" class="ingrediente-checkbox">
-                        <label for="ingrediente2" class="ingrediente-label">Ingrediente 2</label>
-                    </li>
-                    <li class="ingrediente-item">
-                        <input type="checkbox" id="ingrediente3" class="ingrediente-checkbox">
-                        <label for="ingrediente3" class="ingrediente-label">Ingrediente 3</label>
-                    </li>
-                    <li class="ingrediente-item">
-                        <input type="checkbox" id="ingrediente4" class="ingrediente-checkbox">
-                        <label for="ingrediente4" class="ingrediente-label">Ingrediente 4</label>
-                    </li>
-                    <li class="ingrediente-item">
-                        <input type="checkbox" id="ingrediente5" class="ingrediente-checkbox">
-                        <label for="ingrediente5" class="ingrediente-label">Ingrediente 5</label>
-                    </li>
-                    <li class="ingrediente-item">
-                        <input type="checkbox" id="ingrediente6" class="ingrediente-checkbox">
-                        <label for="ingrediente6" class="ingrediente-label">Ingrediente 6</label>
-                    </li>
-                </ul>
+            
+            <!-- Título del platillo (debe ser dinámico desde backend) -->
+            <h3 class="platillo-title">Platillos 1:</h3>
+            
+            <!-- Lista de ingredientes con checkboxes -->
+            <p class="instrucciones">Selecciona los ingredientes que deseas quitar:</p>
+            <ul class="lista_ingredientes">
+                <!-- BACKEND: Inyectar aquí la lista de ingredientes con checkboxes -->
+                <li class="ingrediente-item">
+                    <input type="checkbox" id="ingrediente1" class="ingrediente-checkbox">
+                    <label for="ingrediente1" class="ingrediente-label">Ingrediente 1</label>
+                </li>
+                <li class="ingrediente-item">
+                    <input type="checkbox" id="ingrediente2" class="ingrediente-checkbox">
+                    <label for="ingrediente2" class="ingrediente-label">Ingrediente 2</label>
+                </li>
+                <li class="ingrediente-item">
+                    <input type="checkbox" id="ingrediente3" class="ingrediente-checkbox">
+                    <label for="ingrediente3" class="ingrediente-label">Ingrediente 3</label>
+                </li>
+                <li class="ingrediente-item">
+                    <input type="checkbox" id="ingrediente4" class="ingrediente-checkbox">
+                    <label for="ingrediente4" class="ingrediente-label">Ingrediente 4</label>
+                </li>
+                <li class="ingrediente-item">
+                    <input type="checkbox" id="ingrediente5" class="ingrediente-checkbox">
+                    <label for="ingrediente5" class="ingrediente-label">Ingrediente 5</label>
+                </li>
+                <li class="ingrediente-item">
+                    <input type="checkbox" id="ingrediente6" class="ingrediente-checkbox">
+                    <label for="ingrediente6" class="ingrediente-label">Ingrediente 6</label>
+                </li>
+                <!-- Nuevos checkboxes agregados -->
+                <li class="ingrediente-item">
+                    <input type="checkbox" id="ingrediente7" class="ingrediente-checkbox">
+                    <label for="ingrediente7" class="ingrediente-label">Ingrediente 7</label>
+                </li>
+                <li class="ingrediente-item">
+                    <input type="checkbox" id="ingrediente8" class="ingrediente-checkbox">
+                    <label for="ingrediente8" class="ingrediente-label">Ingrediente 8</label>
+                </li>
+                <li class="ingrediente-item">
+                    <input type="checkbox" id="ingrediente9" class="ingrediente-checkbox">
+                    <label for="ingrediente9" class="ingrediente-label">Ingrediente 9</label>
+                </li>
+            </ul>
 
-        <!-- Botón de envío del formulario -->
-        <div class="botones-container">
-            <label for="mostrar-mensaje" roll="button" class="guardar-btn">Guardar</label>  <!-- Checkbox que controla la visibilidad del mensaje de confirmación //copiar-->
-            <a href="../menu.html" class="guardar-btn cancelar-btn">Cancelar</a>
+            <!-- Botones de acción -->
+            <div class="botones-container">
+                <button type="button" class="guardar-btn">Guardar</button>
+                <button type="button" onclick="window.location.href='../menu.html'" class="cancelar-btn">Cancelar</button>
+            </div>
         </div>
-
-        <!-- Checkbox invisible para controlar la visibilidad del mensaje de confirmación -->
-    <input type="checkbox" id="mostrar-mensaje" class="mensaje-checkbox">
-
-    <!-- Mensaje de confirmación que aparece al guardar -->
-    <div class="mensaje-confirmacion">
-        <div class="mensaje-contenido">
-            <p>Cambios guardados.</p>
-            <!-- El label actúa como botón OK para cerrar el mensaje -->
-            <a href="../menu.html" class="ok-btm">Ok</a> <!-- corregir enlace para que envíe a la interfaz correcta -->
-        </div>
-    </div>
-
-    </div>
     </body> 
 </html>

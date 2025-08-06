@@ -1,8 +1,8 @@
-
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bienvenido</title>
         <link rel="stylesheet" href="../clases_CSS/styleBienvenido.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,18 +12,17 @@
 
     <body>
         <div class="header">
-            <a href="paginas_bienvenido/acerca_de_nosotros.html" class="acerca">Acerca de nosotros</a>
-            <a href="paginas_bienvenido/ayuda.html" class="ayuda">Ayuda</a>
-            <a href="paginas_bienvenido/contactanos.html" class="politicas">Politícas de privacidad</a>
-            <a href="paginas_bienvenido/politicas_de_privacidad.html" class="contactanos">Contáctanos</a>
+            <button onclick="window.location.href='paginas_bienvenido/acerca_de_nosotros.html'" class="header-btn acerca">Acerca de nosotros</button>
+            <button onclick="window.location.href='paginas_bienvenido/ayuda.html'" class="header-btn ayuda">Ayuda</button>
+            <button onclick="window.location.href='paginas_bienvenido/politicas_de_privacidad.html'" class="header-btn politicas">Políticas de privacidad</button>
+            <button onclick="window.location.href='paginas_bienvenido/contactanos.html'" class="header-btn contactanos">Contáctanos</button>
         </div>
         <div class="contenedorImagen">
             <img src="../imagenes/logoSinFondoCC.jpeg" alt="Logo de la empresa" class="logo">
         </div>
         <div class="footer">
-            <a href="inicioSesion.html" class="iniciar_sesion">Iniciar sesión</a>
-            <a href="nuevo_usuario.html" class="nuevo_usuario">Nuevo usuario</a>
+            <button onclick="window.location.href='inicioSesion.html'" class="iniciar_sesion">Iniciar sesión</button>
+            <button onclick="window.location.href='nuevo_usuario.html'" class="nuevo_usuario">Nuevo usuario</button>
         </div>
-        
     </body>
 </html>

@@ -156,7 +156,6 @@ h1, h2 {
 .mesa-option {
     display: flex;
     flex-direction: column;
-    cursor: pointer;
 }
 
 .mesa-box {
@@ -165,7 +164,6 @@ h1, h2 {
     border-radius: 8px;
     padding: var(--space-lg) var(--space-md);
     text-align: center;
-    transition: var(--transition);
     box-shadow: var(--shadow-sm);
     display: flex;
     flex-direction: column;
@@ -204,11 +202,6 @@ h1, h2 {
 }
 
 .eliminar-btn i { font-size: 0.9rem; }
-
-.mesa-option:hover .mesa-box {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-}
 
 /* Panel derecho */
 .right-panel {

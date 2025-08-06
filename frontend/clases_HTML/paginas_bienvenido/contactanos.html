@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contácta - Cuenta Clara</title>
+    <title>Contáctanos - Cuenta Clara</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
@@ -13,40 +13,35 @@
 <body>
     <header class="header">
         <img src="..\../imagenes/logoSinFondoCC.jpeg" alt="Logo de Cuenta Clara" class="logo">
-        <nav class="migas">
-            <a href="../bienvenido.html">Inicio</a>
-        </nav>
+        <button onclick="window.location.href='../bienvenido.html'" class="btn-inicio">Atras</button>
     </header>
 
     <main>
-    <h1>Contáctanos</h1>
+        <h1>Contáctanos</h1>
         <article class="card">
-            
+            <div>
+                <h2>Escríbenos un email</h2>
+                <p>cuentaclara@gmail.com</p>
+            </div>
 
-    <div>
-        <h2>Escríbenos un email</h2>
-        <p>cuentaclara@gmail.com</p>
-    </div>
+            <div class="social-container">
+                <h2>O por medio de nuestras redes sociales</h2>
+                <div class="social-item">
+                    <img class="social-icon" src="../imagenes/instagram.png" alt="Instagram">
+                    <button onclick="window.location.href=''" class="social-btn">@cuenta_claraig</button>
+                </div>
 
-    <div>
-        <h2>O por medio de nuestras redes sociales</h2>
-        <img class="icono_instagram" src="../imagenes/instagram.png" alt="Instagram">
-        <a href="">@cuenta_claraig</a>
-    </div>
+                <div class="social-item">
+                    <img class="social-icon" src="../imagenes/x.png" alt="Twitter-X">
+                    <button onclick="window.location.href=''" class="social-btn">@cuenta_clarax</button>
+                </div>
 
-    <div>
-        <img class="icono_x" src="../imagenes/x.png" alt="Twitter-X">
-        <a href="">@cuenta_clarax</a>
-    </div>
-
-    <div>
-        <img class="icono_facebook" src="../imagenes/facebook.png" alt="Facebook">
-        <a href="">@cuenta_clara_oficial</a>
-    </div>
-    </main>
+                <div class="social-item">
+                    <img class="social-icon" src="../imagenes/facebook.png" alt="Facebook">
+                    <button onclick="window.location.href=''" class="social-btn">@cuenta_clara_oficial</button>
+                </div>
+            </div>
         </article>
-        
-    
-
+    </main>
 </body>
 </html>

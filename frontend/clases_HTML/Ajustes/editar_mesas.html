@@ -7,13 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="..\../clases_CSS/Ajustes/styleEditarMesa.css">
-    
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar mesas - Cuenta Clara</title>
-    <!-- Fuente de iconos de respaldo (se usará si no cargan tus imágenes) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Editar mesas - Cuenta Clara</title>
 </head>
 <body>
     <!-- Checkbox invisible para controlar el menú -->
@@ -65,19 +60,19 @@
         </ul>
     </nav>
 
-    <!-- Contenido principal ------------------------------------------------------------------------------>
+    <!-- Contenido principal -->
     <main class="content">
         <div class="title-card">
             <h1>Editar mesas</h1>
         </div>
 
-        <form action="procesar_eliminar_mesa.php" method="post" class="mesas-form">
+        <form class="mesas-form">
             <div class="mesas-container">
                 <!-- Mesa 1 con botón eliminar -->
                 <div class="mesa-option">
                     <div class="mesa-box">
                         <span class="mesa-numero">Mesa 1</span>
-                        <button type="submit" name="eliminar_mesa" value="1" class="eliminar-btn">
+                        <button type="button" class="eliminar-btn" onclick="eliminarMesa(1)">
                             <i class="fas fa-trash-alt"></i> Eliminar
                         </button>
                     </div>
@@ -87,7 +82,7 @@
                 <div class="mesa-option">
                     <div class="mesa-box">
                         <span class="mesa-numero">Mesa 2</span>
-                        <button type="submit" name="eliminar_mesa" value="2" class="eliminar-btn">
+                        <button type="button" class="eliminar-btn" onclick="eliminarMesa(2)">
                             <i class="fas fa-trash-alt"></i> Eliminar
                         </button>
                     </div>
@@ -97,7 +92,7 @@
                 <div class="mesa-option">
                     <div class="mesa-box">
                         <span class="mesa-numero">Mesa 3</span>
-                        <button type="submit" name="eliminar_mesa" value="3" class="eliminar-btn">
+                        <button type="button" class="eliminar-btn" onclick="eliminarMesa(3)">
                             <i class="fas fa-trash-alt"></i> Eliminar
                         </button>
                     </div>
@@ -106,19 +101,15 @@
                 <div class="mesa-option">
                     <div class="mesa-box">
                         <span class="mesa-numero">Mesa 4</span>
-                        <button type="submit" name="eliminar_mesa" value="4" class="eliminar-btn">
+                        <button type="button" class="eliminar-btn" onclick="eliminarMesa(4)">
                             <i class="fas fa-trash-alt"></i> Eliminar
                         </button>
                     </div>
                 </div>
-                
-                <!-- Puedes agregar más mesas según necesites -->
             </div>
         </form>
-
     </main>
 
-<!------------------------------------------------------------------------------------------------------>
     <!-- Panel derecho -->
     <div class="right-panel">
         <div class="right-panel-content">
@@ -139,24 +130,27 @@
                 <div class="mesa-existente">
                     <span class="mesa-numero">Mesa 3</span>
                 </div>
-                
-                <!-- Más mesas según sea necesario -->
             </div>
             
-            <!-- Botón/link estático en la parte inferior -->
+            <!-- Botón en la parte inferior -->
             <div class="panel-footer">
                 <div class="mesas-actions">
-
-                    <a href="agregar_mesa.html" class="action-btn">
-                    <i class="fas fa-plus"></i> Agregar nueva mesa
-                </a>
+                    <button class="action-btn" onclick="window.location.href='agregar_mesa.html'">
+                        <i class="fas fa-plus"></i> Agregar nueva mesa
+                    </button>
                 </div>
-                
             </div>
-
         </div>
     </div>
 
-
+    <script>
+        function eliminarMesa(numeroMesa) {
+            if(confirm(`¿Estás seguro de eliminar la Mesa ${numeroMesa}?`)) {
+                // Lógica para eliminar la mesa
+                alert(`Mesa ${numeroMesa} eliminada`);
+                // Aquí podrías actualizar la interfaz sin recargar
+            }
+        }
+    </script>
 </body>
 </html>

@@ -4,76 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Usuario - Cuenta Clara</title>
-    <!-- Conexión a Google Fonts para la fuente del proyecto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <!-- Hoja de estilos específica para la edición de usuario -->
     <link rel="stylesheet" href="..\../clases_CSS/Ajustes/styleEditarUsuario.css">
 </head>
 
 <body>
-    <!-- Tarjeta principal del formulario -->
     <div class="box-card">
-        <!-- Título de la sección -->
         <div class="title">
             <h2>Editar usuario</h2>
         </div>
         
-        <!-- Formulario para editar los datos del usuario -->
         <form>
-            <!-- Grupo para editar el nombre -->
             <div class="form-group">
                 <label for="fullname">Editar nombre</label>
                 <input type="text" id="fullname" class="form-input" required>
             </div>
             
-            <!-- Grupo para editar el correo electrónico -->
             <div class="form-group">
                 <label for="email">Editar correo electrónico</label>
                 <input type="email" id="email" class="form-input" required>
             </div>
             
-            <!-- Grupo para editar la contraseña -->
             <div class="form-group">
                 <label for="password">Editar contraseña</label>
                 <input type="password" id="password" class="form-input" required>
             </div>
             
-            <!-- Sección para editar la foto del usuario -->
             <div class="foto-section">
                 <p>Edita la foto del usuario:</p>
                 <div class="file-input-container">
-                    <!-- Botón para seleccionar archivo de imagen -->
                     <label for="platillo-foto" class="file-input-label">
                         <span class="file-input-text">Seleccionar archivo</span>
                         <input type="file" id="platillo-foto" class="file-input" accept="image/*" onchange="document.getElementById('file-name').textContent = this.files[0]?.name || 'No se ha seleccionado ningún archivo'">
                     </label>
-                    <!-- Nombre del archivo seleccionado -->
                     <span class="file-name" id="file-name">No se ha seleccionado ningún archivo</span>
                 </div>
             </div>
             
-            <!-- Botones para guardar o cancelar la edición -->
             <div class="botones-container">
-                <!-- Botón para guardar (controlado por checkbox) -->
-                <label for="mostrar-mensaje" role="button" class="guardar-btn">Guardar</label>
-                <!-- Botón para cancelar y regresar al centro de usuarios -->
-                <a href="centro_de_usuarios.html" class="guardar-btn cancelar-btn">Cancelar</a>
+                <button type="button" class="guardar-btn" id="guardar-btn">Guardar</button>
+                <button type="button" onclick="window.location.href='centro_de_usuarios.html'" class="cancelar-btn">Cancelar</button>
             </div>
         </form>
     </div>
 
-    <!-- Checkbox invisible para mostrar el mensaje de confirmación -->
-    <input type="checkbox" id="mostrar-mensaje" class="mensaje-checkbox">
-
-    <!-- Mensaje de confirmación al guardar los datos -->
-    <div class="mensaje-confirmacion">
+    <div class="mensaje-confirmacion" id="mensaje-confirmacion">
         <div class="mensaje-contenido">
             <p>Datos guardados.</p>
-            <!-- Botón para cerrar el mensaje de confirmación -->
-            <a href="##" class="ok-btm">Ok</a>
+            <button class="ok-btn" onclick="window.location.href='centro_de_usuarios.html'">Ok</button>
         </div>
     </div>
+
+    <script>
+        document.getElementById('guardar-btn').addEventListener('click', function() {
+            document.getElementById('mensaje-confirmacion').style.display = 'flex';
+        });
+    </script>
 </body>
 </html>
