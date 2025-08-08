@@ -6,18 +6,188 @@
     <title>Acerca de nosotros - Cuenta Clara</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="..\../clases_CSS/paginas_bienvenido/styleAcercaNosotros.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #043A5B;
+            --secondary-color: #607B92;
+            --accent-color: #2A2F8C;
+            --light-gray: #f5f5f5;
+            --white: #ffffff;
+            --text-color: #333;
+            --border-color: #dbdee5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Cabin', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Estilo Unificado */
+        .header {
+            background-color: var(--white);
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        .btn-inicio {
+            font-family: 'Cabin', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--accent-color);
+            background: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: 2px solid var(--accent-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-inicio:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Título Principal */
+        .titulo-principal {
+            text-align: center;
+            margin: 40px auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--white);
+            background-color: var(--primary-color);
+            padding: 15px 30px;
+            border-radius: 5px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Contenido Principal */
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+
+        /* Card Estilo */
+        .card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .card section + section {
+            margin-top: 30px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                padding: 12px 20px;
+            }
+            
+            .logo {
+                height: 50px;
+            }
+            
+            h1 {
+                font-size: 1.6rem;
+                padding: 12px 20px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+            
+            .btn-inicio {
+                width: 100%;
+                text-align: center;
+            }
+            
+            h1 {
+                font-size: 1.4rem;
+                padding: 10px 15px;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header class="header">
         <img src="..\../imagenes/logoSinFondoCC.jpeg" alt="Logo de Cuenta Clara" class="logo">
-        <button onclick="window.location.href='../bienvenido.html'" class="btn-inicio">Atras</button>
+        <button onclick="window.location.href='../bienvenido.html'" class="btn-inicio">
+            <i class="fas fa-arrow-left"></i> Volver
+        </button>
     </header>
 
     <main>
-        <h1 class="titulo">Acerca de nosotros</h1>
+        <div class="titulo-principal">
+            <h1>Acerca de nosotros</h1>
+        </div>
         
         <article class="card">
             <section>
