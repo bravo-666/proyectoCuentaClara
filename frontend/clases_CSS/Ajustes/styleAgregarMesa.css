@@ -19,7 +19,39 @@ body {
     align-items: center;
 }
 
+/* Botón de retroceso */
+.back-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--azul-claro);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.back-btn:hover {
+    background-color: var(--azul-oscuro);
+    transform: translateX(-3px);
+}
+
+.back-btn i {
+    font-size: 1.2rem;
+}
+
+/* Ajuste para el título (elimina el margin-top negativo) */
 .title {
+    margin-top: 0; /* Eliminado el valor negativo */
+    /* Resto de estilos se mantienen igual */
     font-family: 'Cabin', sans-serif;
     text-align: center;
     width: 50%;
@@ -29,18 +61,19 @@ body {
     align-items: center;
     margin: auto;
     margin-bottom: 30px;
-    margin-top: -20px;
 }
 
+/* Contenedor principal con posición relativa */
 .box-card {
+    position: relative; /* Necesario para contener el botón absoluto */
     min-width: 50vw;
     min-height: auto;
     border-radius: 10px;
     padding: 50px;
-    border-color: #4d6375;
+    background-color: white;
     box-shadow: 0px 4px 9px rgba(23, 26, 31, 0.1), 0px 0px 2px rgba(23, 26, 31, 0.1);
     border: 1px solid #dbdee5;
-    position: relative;
+    margin-top: 20px; /* Espacio superior añadido */
 }
 
 .card-input {

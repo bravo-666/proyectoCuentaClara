@@ -87,7 +87,7 @@
             <form method="POST" class="pagos-form">
                 <div class="form-group">
                     <label for="monto-extra">Monto extra:</label>
-                    <input type="number" id="monto-extra" name="monto_extra" class="form-input" required>
+                    <input type="number" min="1" id="monto-extra" name="monto_extra" class="form-input">
                 </div>
                 <button type="submit" name="pagos_extra" class="action-button pagos-button">
                     Agregar pago extra
@@ -97,7 +97,7 @@
             <form method="POST" class="corte-form">
                 <div class="form-group">
                     <label for="efectivo-inicial">Efectivo inicial:</label>
-                    <input type="number" id="efectivo-inicial" name="efectivo_inicial" class="form-input" required>
+                    <input type="number" min="1" id="efectivo-inicial" name="efectivo_inicial" class="form-input" required>
                 </div>
                 <button type="submit" name="calcular_corte" class="action-button corte-button">
                     Calcular corte

@@ -8,29 +8,67 @@ body {
     align-items: center;
 }
 
-.title {
-    font-family: 'Cabin', sans-serif;
-    text-align: center;
-    width: 50%;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #043A5B;
-    align-items: center;
-    margin: auto;
-    margin-bottom: 30px;
-    margin-top: -20px;
-}
-
+/* Contenedor principal con posición relativa */
 .box-card {
+    position: relative;
     min-width: 50vw;
     min-height: auto;
     border-radius: 10px;
     padding: 50px;
-    border-color: #4d6375;
-    box-shadow: 0px 4px 9px #171a1f1C, 0px 0px 2px #171a1f1F;
+    background-color: white;
+    box-shadow: 0px 4px 9px rgba(23, 26, 31, 0.1), 0px 0px 2px rgba(23, 26, 31, 0.1);
     border: 1px solid #dbdee5;
+    margin-top: 20px;
 }
 
+/* Botón de retroceso corregido */
+.back-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: #607B92;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.back-btn:hover {
+    background-color: #043A5B;
+    transform: translateX(-3px);
+}
+
+.back-btn i {
+    font-size: 1.2rem;
+}
+
+/* Título ajustado */
+.title {
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #043A5B;
+    margin: 0 auto 30px;
+}
+
+h2 {
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Campos del formulario */
 .card-input {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -44,17 +82,11 @@ body {
 
 .card-input:focus {
     outline: none;
-    border-color: #043A5BFF;
-    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+    border-color: #043A5B;
+    box-shadow: 0 0 0 2px rgba(4, 58, 91, 0.2);
 }
 
-h2 {
-    font-size: 32px;
-    color: white;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
+/* Grupos de formulario dinámicos */
 .form-group {
     margin: 3px;
     transition: all 0.3s ease-out;
@@ -76,8 +108,8 @@ h2 {
 
 .form-input:focus {
     outline: none;
-    border-color: #043A5BFF;
-    box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2);
+    border-color: #043A5B;
+    box-shadow: 0 0 0 2px rgba(4, 58, 91, 0.2);
 }
 
 .form-group:has(.form-input:not(:placeholder-shown)) + .form-group,
@@ -87,6 +119,7 @@ h2 {
     margin-top: 1rem;
 }
 
+/* Sección de foto */
 .foto-section {
     margin: 20px 0;
 }
@@ -132,11 +165,11 @@ h2 {
     padding-left: 5px;
 }
 
-/* Estilos para botones */
+/* Botones de acción */
 .botones-container {
     display: flex;
     gap: 10px;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .guardar-btn, .cancelar-btn, .ok-btn {
@@ -157,7 +190,9 @@ h2 {
 }
 
 .guardar-btn:hover {
-    background-color: #59bb70;
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .cancelar-btn {
@@ -167,6 +202,8 @@ h2 {
 
 .cancelar-btn:hover {
     background-color: #bb2d3b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .ok-btn {
@@ -209,6 +246,7 @@ h2 {
     color: black;
 }
 
+/* Responsive Design */
 @media (max-width: 768px) {
     .box-card {
         min-width: 80vw;
@@ -222,5 +260,32 @@ h2 {
     .mensaje-contenido {
         padding: 20px;
         max-width: 90%;
+    }
+
+    .back-btn {
+        top: 15px;
+        left: 15px;
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box-card {
+        min-width: 90vw;
+        padding: 20px;
+    }
+    
+    .botones-container {
+        flex-direction: column;
+    }
+    
+    .back-btn {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .back-btn i {
+        font-size: 1rem;
     }
 }

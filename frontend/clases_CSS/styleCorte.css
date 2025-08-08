@@ -292,6 +292,7 @@ h1, h2 {
 
 .pagos-button:hover {
     background-color: #218838;
+    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -302,6 +303,7 @@ h1, h2 {
 
 .corte-button:hover {
     background-color: #062c44;
+    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
